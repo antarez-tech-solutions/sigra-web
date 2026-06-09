@@ -1,0 +1,176 @@
+{
+  "common": {
+    "appName": "SigraChain",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "actions": "Actions",
+    "status": "Status",
+    "date": "Date",
+    "name": "Name",
+    "email": "Email",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "documents": "Documents",
+    "envelopes": "Envelopes",
+    "settings": "Settings",
+    "login": "Log In",
+    "register": "Sign Up",
+    "logout": "Log Out",
+    "pricing": "Pricing",
+    "verify": "Verify",
+    "home": "Home"
+  },
+  "auth": {
+    "loginTitle": "Log In",
+    "loginSubtitle": "Welcome back! Enter your credentials to continue.",
+    "registerTitle": "Create Account",
+    "registerSubtitle": "Start signing documents with blockchain verification.",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "company": "Company (optional)",
+    "loginButton": "Log In",
+    "registerButton": "Create Account",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "loginSuccess": "Login successful!",
+    "registerSuccess": "Account created successfully!",
+    "logoutSuccess": "Logged out successfully",
+    "invalidCredentials": "Invalid email or password"
+  },
+  "landing": {
+    "hero": {
+      "title": "Every Signature, Forever Verifiable",
+      "subtitle": "Blockchain-anchored e-signatures with independent verification. No vendor lock-in, no expiration.",
+      "cta": "Get Started Free",
+      "ctaSecondary": "Verify Document"
+    },
+    "features": {
+      "title": "Why SigraChain?",
+      "upload": {
+        "title": "Upload",
+        "description": "Upload any PDF document to get started"
+      },
+      "sign": {
+        "title": "Sign",
+        "description": "Add signers and collect e-signatures"
+      },
+      "anchor": {
+        "title": "Anchor",
+        "description": "Proof anchored on Ethereum L2 (Base & Arbitrum)"
+      }
+    },
+    "benefits": {
+      "independent": {
+        "title": "Independent Verification",
+        "description": "Anyone can verify documents without needing SigraChain to exist"
+      },
+      "permanent": {
+        "title": "Permanent Proof",
+        "description": "Blockchain records are immutable and last forever"
+      },
+      "costEffective": {
+        "title": "Cost Effective",
+        "description": "Batch anchoring reduces costs to pennies per document"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome, {{name}}!",
+    "stats": {
+      "totalDocuments": "Total Documents",
+      "pendingSignatures": "Pending Signatures",
+      "completed": "Completed",
+      "anchoredOnChain": "Anchored On-Chain"
+    },
+    "recentActivity": "Recent Activity",
+    "quickActions": {
+      "title": "Quick Actions",
+      "newEnvelope": "New Envelope",
+      "uploadDocument": "Upload Document",
+      "verifyDocument": "Verify Document"
+    }
+  },
+  "documents": {
+    "title": "Documents",
+    "upload": "Upload Document",
+    "empty": {
+      "title": "No documents yet",
+      "description": "Upload your first document to get started"
+    },
+    "table": {
+      "filename": "Filename",
+      "size": "Size",
+      "hash": "Hash",
+      "uploadedAt": "Uploaded",
+      "actions": "Actions"
+    }
+  },
+  "envelopes": {
+    "title": "Envelopes",
+    "newEnvelope": "New Envelope",
+    "empty": {
+      "title": "No envelopes yet",
+      "description": "Create your first envelope to start collecting signatures"
+    },
+    "status": {
+      "draft": "Draft",
+      "pending": "Pending",
+      "completed": "Completed",
+      "anchored": "Anchored"
+    },
+    "table": {
+      "title": "Title",
+      "status": "Status",
+      "signers": "Signers",
+      "createdAt": "Created",
+      "actions": "Actions"
+    }
+  },
+  "verify": {
+    "title": "Verify Document",
+    "subtitle": "Check if a document has been signed and anchored on-chain",
+    "inputLabel": "Document Hash",
+    "inputPlaceholder": "Enter document hash (0x...)",
+    "button": "Verify",
+    "verified": {
+      "title": "Document Verified",
+      "description": "This document has been signed and anchored on-chain"
+    },
+    "notFound": {
+      "title": "Not Found",
+      "description": "This document has not been signed on SigraChain"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": {
+      "title": "Profile",
+      "updateSuccess": "Profile updated successfully"
+    },
+    "preferences": {
+      "title": "Preferences",
+      "language": "Language",
+      "theme": "Theme"
+    }
+  }
+}

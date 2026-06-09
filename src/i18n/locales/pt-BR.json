@@ -1,0 +1,176 @@
+{
+  "common": {
+    "appName": "SigraChain",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Salvar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "actions": "Ações",
+    "status": "Status",
+    "date": "Data",
+    "name": "Nome",
+    "email": "E-mail",
+    "yes": "Sim",
+    "no": "Não"
+  },
+  "nav": {
+    "dashboard": "Painel",
+    "documents": "Documentos",
+    "envelopes": "Envelopes",
+    "settings": "Configurações",
+    "login": "Entrar",
+    "register": "Cadastrar",
+    "logout": "Sair",
+    "pricing": "Preços",
+    "verify": "Verificar",
+    "home": "Início"
+  },
+  "auth": {
+    "loginTitle": "Entrar",
+    "loginSubtitle": "Bem-vindo de volta! Digite suas credenciais para continuar.",
+    "registerTitle": "Criar Conta",
+    "registerSubtitle": "Comece a assinar documentos com verificação blockchain.",
+    "email": "E-mail",
+    "password": "Senha",
+    "confirmPassword": "Confirmar Senha",
+    "firstName": "Nome",
+    "lastName": "Sobrenome",
+    "company": "Empresa (opcional)",
+    "loginButton": "Entrar",
+    "registerButton": "Criar Conta",
+    "forgotPassword": "Esqueceu a senha?",
+    "noAccount": "Não tem uma conta?",
+    "hasAccount": "Já tem uma conta?",
+    "loginSuccess": "Login realizado com sucesso!",
+    "registerSuccess": "Conta criada com sucesso!",
+    "logoutSuccess": "Logout realizado com sucesso",
+    "invalidCredentials": "E-mail ou senha inválidos"
+  },
+  "landing": {
+    "hero": {
+      "title": "Cada Assinatura, Para Sempre Verificável",
+      "subtitle": "Assinaturas eletrônicas ancoradas em blockchain com verificação independente. Sem dependência de fornecedor, sem expiração.",
+      "cta": "Comece Grátis",
+      "ctaSecondary": "Verificar Documento"
+    },
+    "features": {
+      "title": "Por que SigraChain?",
+      "upload": {
+        "title": "Envie",
+        "description": "Envie qualquer documento PDF para começar"
+      },
+      "sign": {
+        "title": "Assine",
+        "description": "Adicione signatários e colete assinaturas eletrônicas"
+      },
+      "anchor": {
+        "title": "Ancore",
+        "description": "Prova ancorada no Ethereum L2 (Base & Arbitrum)"
+      }
+    },
+    "benefits": {
+      "independent": {
+        "title": "Verificação Independente",
+        "description": "Qualquer pessoa pode verificar documentos sem precisar do SigraChain"
+      },
+      "permanent": {
+        "title": "Prova Permanente",
+        "description": "Registros blockchain são imutáveis e duram para sempre"
+      },
+      "costEffective": {
+        "title": "Custo-Efetivo",
+        "description": "Ancoragem em lote reduz custos para centavos por documento"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Painel",
+    "welcome": "Bem-vindo, {{name}}!",
+    "stats": {
+      "totalDocuments": "Total de Documentos",
+      "pendingSignatures": "Assinaturas Pendentes",
+      "completed": "Concluídos",
+      "anchoredOnChain": "Ancorados On-Chain"
+    },
+    "recentActivity": "Atividade Recente",
+    "quickActions": {
+      "title": "Ações Rápidas",
+      "newEnvelope": "Novo Envelope",
+      "uploadDocument": "Enviar Documento",
+      "verifyDocument": "Verificar Documento"
+    }
+  },
+  "documents": {
+    "title": "Documentos",
+    "upload": "Enviar Documento",
+    "empty": {
+      "title": "Nenhum documento ainda",
+      "description": "Envie seu primeiro documento para começar"
+    },
+    "table": {
+      "filename": "Nome do Arquivo",
+      "size": "Tamanho",
+      "hash": "Hash",
+      "uploadedAt": "Enviado",
+      "actions": "Ações"
+    }
+  },
+  "envelopes": {
+    "title": "Envelopes",
+    "newEnvelope": "Novo Envelope",
+    "empty": {
+      "title": "Nenhum envelope ainda",
+      "description": "Crie seu primeiro envelope para começar a coletar assinaturas"
+    },
+    "status": {
+      "draft": "Rascunho",
+      "pending": "Pendente",
+      "completed": "Concluído",
+      "anchored": "Ancorado"
+    },
+    "table": {
+      "title": "Título",
+      "status": "Status",
+      "signers": "Signatários",
+      "createdAt": "Criado",
+      "actions": "Ações"
+    }
+  },
+  "verify": {
+    "title": "Verificar Documento",
+    "subtitle": "Verifique se um documento foi assinado e ancorado on-chain",
+    "inputLabel": "Hash do Documento",
+    "inputPlaceholder": "Digite o hash do documento (0x...)",
+    "button": "Verificar",
+    "verified": {
+      "title": "Documento Verificado",
+      "description": "Este documento foi assinado e ancorado on-chain"
+    },
+    "notFound": {
+      "title": "Não Encontrado",
+      "description": "Este documento não foi assinado no SigraChain"
+    }
+  },
+  "settings": {
+    "title": "Configurações",
+    "profile": {
+      "title": "Perfil",
+      "updateSuccess": "Perfil atualizado com sucesso"
+    },
+    "preferences": {
+      "title": "Preferências",
+      "language": "Idioma",
+      "theme": "Tema"
+    }
+  }
+}
