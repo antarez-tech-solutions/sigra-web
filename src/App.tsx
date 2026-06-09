@@ -7,6 +7,9 @@ import { RegisterPage } from './pages/RegisterPage'
 import { ForgotPasswordPage } from './pages/ForgotPasswordPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { DocumentsPage } from './pages/DocumentsPage'
+import { EnvelopesPage } from './pages/EnvelopesPage'
+import { EnvelopeDetailPage } from './pages/EnvelopeDetailPage'
+import { CreateEnvelopePage } from './pages/CreateEnvelopePage'
 import { ProtectedRoute } from './components/ProtectedRoute'
 
 export default function App() {
@@ -31,6 +34,30 @@ export default function App() {
         element={
           <ProtectedRoute>
             <DocumentsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/app/envelopes"
+        element={
+          <ProtectedRoute>
+            <EnvelopesPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/app/envelopes/new"
+        element={
+          <ProtectedRoute>
+            <CreateEnvelopePage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/app/envelopes/:id"
+        element={
+          <ProtectedRoute>
+            <EnvelopeDetailPage />
           </ProtectedRoute>
         }
       />
