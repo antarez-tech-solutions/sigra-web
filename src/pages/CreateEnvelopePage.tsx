@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { AppShell } from '../components/AppShell'
 import { Card } from '../components/Card'
@@ -24,7 +23,6 @@ interface Signer {
 }
 
 export function CreateEnvelopePage() {
-  const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
   const { showToast } = useToast()
@@ -66,9 +64,9 @@ export function CreateEnvelopePage() {
   }
 
   const updateSigner = (index: number, field: keyof Signer, value: string) => {
-    const updated = [...signers]
-    updated[index] = { ...updated[index], [field]: value }
-    setSigners(updated)
+    setSigners(signers.map((signer, i) => 
+      i === index ? { ...signer, [field]: value } : signer
+    ))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {

@@ -14,8 +14,7 @@ import {
   Upload, 
   Search, 
   Download, 
-  Trash2, 
-  MoreVertical,
+  Trash2,
   Calendar,
   HardDrive
 } from 'lucide-react'

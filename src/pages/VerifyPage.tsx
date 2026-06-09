@@ -8,7 +8,7 @@ import { Container } from '../components/Container'
 import { apiClient } from '../api/client'
 import { useState } from 'react'
 import { useToast } from '../components/ToastProvider'
-import { Shield, CheckCircle2, XCircle, Clock, ExternalLink, FileText, Users, Calendar } from 'lucide-react'
+import { Shield, CheckCircle2, XCircle, Clock, ExternalLink, FileText, Users } from 'lucide-react'
 import { Envelope } from '../api/types'
 
 export function VerifyPage() {

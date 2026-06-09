@@ -1,26 +1,19 @@
-import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { AppShell } from '../components/AppShell'
 import { Card } from '../components/Card'
 import { Button } from '../components/Button'
 import { Badge } from '../components/Badge'
-import { useAuth } from '../contexts/AuthContext'
-import { useToast } from '../components/ToastProvider'
 import { 
   CreditCard, 
   CheckCircle2, 
   Calendar,
   Download,
-  ArrowUpRight,
   Zap,
   Crown,
   Building2
 } from 'lucide-react'
 
 export function BillingPage() {
-  const { t } = useTranslation()
-  const { user } = useAuth()
-  const { showToast } = useToast()
   const navigate = useNavigate()
 
   // Mock billing data

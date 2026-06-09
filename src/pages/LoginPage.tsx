@@ -8,7 +8,7 @@ import { Container } from '../components/Container'
 import { useAuth } from '../contexts/AuthContext'
 import { useToast } from '../components/ToastProvider'
 import { useState } from 'react'
-import { Mail, Lock, Github, Chrome } from 'lucide-react'
+import { Mail, Lock } from 'lucide-react'
 
 export function LoginPage() {
   const { t } = useTranslation()
@@ -92,11 +92,9 @@ export function LoginPage() {
 
               <div className="grid grid-cols-2 gap-3">
                 <Button variant="secondary" className="w-full">
-                  <Chrome className="w-5 h-5" />
                   Google
                 </Button>
                 <Button variant="secondary" className="w-full">
-                  <Github className="w-5 h-5" />
                   GitHub
                 </Button>
               </div>

@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import { useParams, useNavigate } from 'react-router-dom'
 import { AppShell } from '../components/AppShell'
 import { Card } from '../components/Card'
@@ -12,7 +11,6 @@ import {
   Send, 
   FileText, 
   Users, 
-  Calendar, 
   Shield, 
   ExternalLink,
   CheckCircle2,
@@ -22,7 +20,6 @@ import {
 } from 'lucide-react'
 
 export function EnvelopeDetailPage() {
-  const { t } = useTranslation()
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const { showToast } = useToast()
