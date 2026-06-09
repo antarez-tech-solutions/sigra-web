@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envelopes — SigraChain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <div class="app-shell">
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="logo"><img src="../assets/sigra-logo-icon.svg" alt="" width="32" height="32"><span>SigraChain</span></div>
+      <nav>
+        <a href="dashboard.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a>
+        <a href="documents.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Documents</a>
+        <a href="envelopes.html" aria-current="page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Envelopes</a>
+        <a href="envelope-new.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg> New Envelope</a>
+        <a href="verify.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Verify</a>
+        <a href="settings.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Settings</a>
+        <a href="billing.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Billing</a>
+      </nav>
+    </aside>
+
+    <main id="main-content" class="main-content" role="main">
+      <div class="topbar">
+        <div class="flex gap-3" style="align-items:center;">
+          <button class="hamburger" aria-label="Open navigation" onclick="openSidebar()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <h1>Envelopes</h1>
+        </div>
+        <div class="topbar-actions">
+          <a href="envelope-new.html" class="btn btn-accent">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            New Envelope
+          </a>
+        </div>
+      </div>
+
+      <div class="flex gap-2 mb-6 flex-wrap" role="tablist" aria-label="Filter by status">
+        <button class="btn btn-accent btn-sm" role="tab" aria-selected="true">All (8)</button>
+        <button class="btn btn-ghost btn-sm" role="tab" aria-selected="false">Draft (1)</button>
+        <button class="btn btn-ghost btn-sm" role="tab" aria-selected="false">Pending (4)</button>
+        <button class="btn btn-ghost btn-sm" role="tab" aria-selected="false">Completed (1)</button>
+        <button class="btn btn-ghost btn-sm" role="tab" aria-selected="false">Anchored (2)</button>
+      </div>
+
+      <div class="form-group mb-6" style="max-width:400px;">
+        <div style="position:relative;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" style="position:absolute; left:var(--sp-3); top:50%; transform:translateY(-50%);"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" class="form-input" placeholder="Search envelopes..." aria-label="Search envelopes" style="padding-left:var(--sp-10);">
+        </div>
+      </div>
+
+      <div class="grid" style="gap:var(--sp-4);">
+        <a href="envelope-detail.html" class="card card-hover" style="text-decoration:none; display:block;">
+          <div class="flex-between mb-3">
+            <div>
+              <h3 class="font-semibold">NDA with Acme Corp</h3>
+              <p class="text-xs text-muted">NDA_AcmeCorp.pdf · Sequential signing</p>
+            </div>
+            <span class="badge badge-anchored">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              anchored
+            </span>
+          </div>
+          <div class="flex gap-4 text-xs text-muted flex-wrap">
+            <span>2/2 signed</span>
+            <span>On-chain proof verified</span>
+            <span>Jun 8, 2026</span>
+          </div>
+        </a>
+
+        <a href="envelope-detail.html" class="card card-hover" style="text-decoration:none; display:block;">
+          <div class="flex-between mb-3">
+            <div>
+              <h3 class="font-semibold">Supplier Agreement</h3>
+              <p class="text-xs text-muted">Contract_SupplierXYZ.pdf · Parallel signing</p>
+            </div>
+            <span class="badge badge-pending">pending</span>
+          </div>
+          <div class="flex gap-4 text-xs text-muted flex-wrap mb-3">
+            <span>1/3 signed</span>
+            <span>Deadline: Jun 20, 2026</span>
+            <span>Jun 7, 2026</span>
+          </div>
+          <div class="flex gap-2 flex-wrap">
+            <span class="badge badge-signed" style="font-size:0.6875rem;">Maria Silva</span>
+            <span class="badge badge-pending" style="font-size:0.6875rem;">Carlos Lopez</span>
+            <span class="badge badge-pending" style="font-size:0.6875rem;">Ana Torres</span>
+          </div>
+        </a>
+
+        <a href="envelope-detail.html" class="card card-hover" style="text-decoration:none; display:block;">
+          <div class="flex-between mb-3">
+            <div>
+              <h3 class="font-semibold">Invoice May 2026</h3>
+              <p class="text-xs text-muted">Invoice_May2026.pdf · Sequential signing</p>
+            </div>
+            <span class="badge badge-completed">completed</span>
+          </div>
+          <div class="flex gap-4 text-xs text-muted flex-wrap">
+            <span>2/2 signed</span>
+            <span>Awaiting next anchor batch</span>
+            <span>Jun 5, 2026</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="pagination" role="navigation" aria-label="Pagination">
+        <button aria-label="Previous page" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button aria-current="page">1</button>
+        <button>2</button>
+        <button aria-label="Next page">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function openSidebar() { document.getElementById('sidebar').style.display = 'flex'; document.getElementById('sidebarOverlay').classList.add('active'); }
+    function closeSidebar() { document.getElementById('sidebar').style.display = 'none'; document.getElementById('sidebarOverlay').classList.remove('active'); }
+  </script>
+</body>
+</html>

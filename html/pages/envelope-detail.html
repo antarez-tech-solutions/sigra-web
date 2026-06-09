@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NDA with Acme Corp — SigraChain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <div class="app-shell">
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="logo"><img src="../assets/sigra-logo-icon.svg" alt="" width="32" height="32"><span>SigraChain</span></div>
+      <nav>
+        <a href="dashboard.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a>
+        <a href="documents.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Documents</a>
+        <a href="envelopes.html" aria-current="page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Envelopes</a>
+        <a href="envelope-new.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg> New Envelope</a>
+        <a href="verify.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Verify</a>
+        <a href="settings.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Settings</a>
+        <a href="billing.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Billing</a>
+      </nav>
+    </aside>
+
+    <main id="main-content" class="main-content" role="main">
+      <div class="topbar">
+        <div class="flex gap-3" style="align-items:center;">
+          <button class="hamburger" aria-label="Open navigation menu" onclick="openSidebar()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div>
+            <a href="envelopes.html" class="text-sm text-muted" style="display:flex; align-items:center; gap:var(--sp-1); margin-bottom:var(--sp-2);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Back to Envelopes
+            </a>
+            <div class="flex gap-3" style="align-items:center;">
+              <h1>NDA with Acme Corp</h1>
+              <span class="badge badge-anchored">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                anchored
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="btn btn-ghost btn-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Proof
+          </button>
+          <a href="https://base.easscan.org" target="_blank" rel="noopener" class="btn btn-accent btn-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View on Blockchain
+          </a>
+        </div>
+      </div>
+
+      <div class="card mb-6">
+        <h2 class="card-title mb-6">Signing Progress</h2>
+        <div class="status-flow">
+          <div class="status-step done">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span>Draft</span>
+          </div>
+          <span class="status-arrow">&rarr;</span>
+          <div class="status-step done">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span>Sent</span>
+          </div>
+          <span class="status-arrow">&rarr;</span>
+          <div class="status-step done">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span>Completed</span>
+          </div>
+          <span class="status-arrow">&rarr;</span>
+          <div class="status-step active">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            <span>Anchored</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mb-6">
+        <div class="card">
+          <h2 class="card-title mb-4">Envelope Details</h2>
+          <dl style="display:grid; grid-template-columns:130px 1fr; gap:var(--sp-3); font-size:var(--text-sm);">
+            <dt class="text-muted">Document</dt>
+            <dd class="font-semibold">NDA_AcmeCorp.pdf</dd>
+            <dt class="text-muted">Signing Order</dt>
+            <dd>Sequential</dd>
+            <dt class="text-muted">Deadline</dt>
+            <dd>Jun 15, 2026</dd>
+            <dt class="text-muted">Created</dt>
+            <dd>Jun 8, 2026 at 14:35 UTC</dd>
+            <dt class="text-muted">Anchored</dt>
+            <dd>Jun 8, 2026 at 18:00 UTC</dd>
+          </dl>
+        </div>
+
+        <div class="card proof-card">
+          <h2 class="card-title mb-4" style="display:flex; align-items:center; gap:var(--sp-2);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            On-Chain Proof
+          </h2>
+          <div class="proof-summary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span>Verified on Base blockchain</span>
+          </div>
+          <dl style="display:grid; grid-template-columns:120px 1fr; gap:var(--sp-3); font-size:var(--text-sm);">
+            <dt class="text-muted">Chain</dt>
+            <dd>Base (8453)</dd>
+            <dt class="text-muted">Attestation</dt>
+            <dd class="font-mono text-xs" style="word-break:break-all;">0x8a7b...e9f8a7b</dd>
+          </dl>
+          <button class="disclosure-toggle mt-4" aria-expanded="false" onclick="toggleDisclosure(this)">
+            Show technical details
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="disclosure-content">
+            <dl style="display:grid; grid-template-columns:120px 1fr; gap:var(--sp-3); font-size:var(--text-xs);">
+              <dt class="text-muted">Full Attestation</dt>
+              <dd class="font-mono" style="word-break:break-all;">0x8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b</dd>
+              <dt class="text-muted">Merkle Root</dt>
+              <dd class="font-mono" style="word-break:break-all;">0x1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b</dd>
+              <dt class="text-muted">Merkle Proof</dt>
+              <dd class="font-mono">Verified — authentication path valid</dd>
+            </dl>
+          </div>
+          <a href="https://base.easscan.org" target="_blank" rel="noopener" class="btn btn-ghost btn-sm mt-4">
+            View on EAS Explorer
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title mb-4">Signers</h2>
+        <div class="timeline">
+          <div class="timeline-step done">
+            <div class="flex-between">
+              <div>
+                <div class="font-semibold">Maria Silva</div>
+                <div class="text-xs text-muted">maria@example.com</div>
+              </div>
+              <div class="text-right">
+                <span class="badge badge-signed">signed</span>
+                <div class="text-xs text-muted mt-2">Jun 8, 2026 · 15:00 UTC</div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-step done">
+            <div class="flex-between">
+              <div>
+                <div class="font-semibold">John Smith</div>
+                <div class="text-xs text-muted">john@acmecorp.com</div>
+              </div>
+              <div class="text-right">
+                <span class="badge badge-signed">signed</span>
+                <div class="text-xs text-muted mt-2">Jun 8, 2026 · 16:30 UTC</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function openSidebar() { document.getElementById('sidebar').style.display = 'flex'; document.getElementById('sidebarOverlay').classList.add('active'); }
+    function closeSidebar() { document.getElementById('sidebar').style.display = 'none'; document.getElementById('sidebarOverlay').classList.remove('active'); }
+    function toggleDisclosure(btn) {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      btn.nextElementSibling.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Document — SigraChain</title>
+  <meta name="description" content="Verify any SigraChain-signed document on the blockchain. Upload a PDF or enter a SHA-256 hash. No account required.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <div class="public-page">
+    <header class="public-header" role="banner">
+      <a href="landing.html" class="logo" aria-label="SigraChain home">
+        <img src="../assets/sigra-logo.svg" alt="SigraChain" height="28">
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="pricing.html">Pricing</a>
+        <a href="verify.html" aria-current="page">Verify</a>
+        <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+        <a href="register.html" class="btn btn-accent btn-sm">Start Free</a>
+      </nav>
+      <button class="mobile-nav-btn" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </header>
+
+    <main id="main-content" class="section" style="max-width: 720px;">
+      <h1 class="section-title" style="font-size: var(--text-2xl);">Verify a Document</h1>
+      <p class="section-subtitle">Upload a signed document, enter its SHA-256 hash, or enter an attestation UID to verify authenticity on-chain. No account required.</p>
+
+      <div style="display:flex; gap:var(--sp-2); margin-bottom:var(--sp-6); flex-wrap:wrap;" role="tablist" aria-label="Verification method">
+        <button class="btn btn-accent btn-sm" role="tab" aria-selected="true" aria-controls="method-upload" id="tab-upload" onclick="showMethod('upload')">Upload PDF</button>
+        <button class="btn btn-ghost btn-sm" role="tab" aria-selected="false" aria-controls="method-hash" id="tab-hash" onclick="showMethod('hash')">Enter Hash</button>
+        <button class="btn btn-ghost btn-sm" role="tab" aria-selected="false" aria-controls="method-attestation" id="tab-attestation" onclick="showMethod('attestation')">Attestation UID</button>
+      </div>
+
+      <div id="method-upload" class="card mb-6" role="tabpanel" aria-labelledby="tab-upload">
+        <div class="drop-zone" id="dropZone" role="button" tabindex="0" aria-label="Upload PDF file" onclick="document.getElementById('fileInput').click()" onkeydown="if(event.key==='Enter')document.getElementById('fileInput').click()">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <p>Drop a signed document here</p>
+          <span class="hint">or click to browse. Accepts PDF files up to 50MB.</span>
+          <input type="file" id="fileInput" accept=".pdf" class="sr-only" onchange="handleFile(this.files[0])">
+        </div>
+        <div id="fileInfo" class="hidden mt-4" style="padding:var(--sp-4); background:var(--bg-subtle); border-radius:var(--radius-md);">
+          <p class="font-semibold" id="fileName"></p>
+          <p class="text-muted text-sm font-mono mt-2" id="fileHash"></p>
+          <button class="btn btn-accent btn-sm mt-4" onclick="verifyDocument()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Verify on Blockchain
+          </button>
+        </div>
+      </div>
+
+      <div id="method-hash" class="card mb-6 hidden" role="tabpanel" aria-labelledby="tab-hash">
+        <div class="form-group">
+          <label for="hashInput" class="form-label">SHA-256 Document Hash</label>
+          <input type="text" id="hashInput" class="form-input font-mono" placeholder="a1b2c3d4e5f6..." autocomplete="off" spellcheck="false">
+          <span class="form-hint">64-character hexadecimal string</span>
+        </div>
+        <div class="flex gap-3 mt-4">
+          <button class="btn btn-accent" onclick="verifyByHash()">Verify Hash</button>
+          <button class="btn btn-ghost" onclick="demoVerify()">Try Demo</button>
+        </div>
+      </div>
+
+      <div id="method-attestation" class="card mb-6 hidden" role="tabpanel" aria-labelledby="tab-attestation">
+        <div class="form-group">
+          <label for="attestationInput" class="form-label">Attestation UID</label>
+          <input type="text" id="attestationInput" class="form-input font-mono" placeholder="0x8a7b6c5d..." autocomplete="off" spellcheck="false">
+          <span class="form-hint">The on-chain attestation identifier from your signing confirmation</span>
+        </div>
+        <button class="btn btn-accent mt-4" onclick="verifyByAttestation()">Verify Attestation</button>
+      </div>
+
+      <div id="result-verified" class="card card-success hidden" role="region" aria-label="Verification result" aria-live="polite">
+        <div class="verify-result">
+          <div class="verify-icon verify-verified" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h2 class="text-success" style="font-size:var(--text-xl); margin-bottom:var(--sp-2);">Document Verified</h2>
+          <p class="text-muted mb-6">This document's authenticity has been confirmed on the blockchain. The cryptographic proof matches the on-chain record.</p>
+
+          <dl class="verify-details">
+            <dt>Document</dt>
+            <dd class="font-semibold">NDA_AcmeCorp.pdf</dd>
+            <dt>Verification Status</dt>
+            <dd><span class="badge badge-anchored">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+              Verified on-chain
+            </span></dd>
+            <dt>Chain</dt>
+            <dd>Base (chain ID 8453)</dd>
+            <dt>Signers</dt>
+            <dd>2 signed (Maria Silva, John Smith)</dd>
+            <dt>Anchored</dt>
+            <dd>June 8, 2026 at 18:00 UTC</dd>
+          </dl>
+
+          <button class="disclosure-toggle mt-4" aria-expanded="false" onclick="toggleDisclosure(this)">
+            Show technical proof details
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="disclosure-content">
+            <dl class="verify-details">
+              <dt>SHA-256 Hash</dt>
+              <dd class="font-mono text-xs">a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2</dd>
+              <dt>Attestation UID</dt>
+              <dd class="font-mono text-xs">0x8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b</dd>
+              <dt>Merkle Root</dt>
+              <dd class="font-mono text-xs">0x1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b</dd>
+              <dt>Merkle Proof</dt>
+              <dd class="font-mono text-xs">Verified — authentication path matches on-chain root</dd>
+            </dl>
+          </div>
+
+          <div class="flex gap-3 flex-wrap" style="justify-content:center; margin-top:var(--sp-6);">
+            <a href="https://base.easscan.org/attestation/view/0x8a7b6c5d" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View on EAS Explorer
+            </a>
+            <button class="btn btn-ghost btn-sm" onclick="shareVerification()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Share Verification
+            </button>
+            <button class="btn btn-ghost btn-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="result-conversion" class="card card-accent hidden mt-6" style="text-align:center; padding:var(--sp-8);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" style="margin:0 auto var(--sp-3);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+        <h3 style="font-size:var(--text-lg); margin-bottom:var(--sp-2);">Need to sign documents with this level of proof?</h3>
+        <p class="text-muted text-sm mb-6">Start signing with blockchain verification — free for 5 documents per month.</p>
+        <div class="flex gap-3" style="justify-content:center; flex-wrap:wrap;">
+          <a href="register.html" class="btn btn-accent">Create Free Account</a>
+          <a href="pricing.html" class="btn btn-ghost">See Pricing</a>
+        </div>
+      </div>
+
+      <div id="result-notfound" class="card hidden mt-6" role="region" aria-label="Verification result" aria-live="polite">
+        <div class="verify-result">
+          <div class="verify-icon verify-notfound" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h2 style="margin-bottom:var(--sp-2);">Document Not Found</h2>
+          <p class="text-muted">No document matching this hash was found in the SigraChain registry. The document may not have been signed through our platform, or the hash may be incorrect.</p>
+        </div>
+      </div>
+
+      <div id="result-tampered" class="card card-danger hidden mt-6" role="region" aria-label="Verification result" aria-live="polite">
+        <div class="verify-result">
+          <div class="verify-icon verify-tampered" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h2 class="text-danger" style="margin-bottom:var(--sp-2);">Document May Have Been Modified</h2>
+          <p class="text-muted">A signed document was found with a similar hash, but the exact hash doesn't match. This indicates the document has been altered since it was signed. Do not rely on this document.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="public-footer" role="contentinfo">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/sigra-logo.svg" alt="SigraChain" height="24">
+          <p>The e-signature platform with independently verifiable blockchain proof.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="pricing.html">Pricing</a>
+          <a href="verify.html">Verify Document</a>
+          <a href="landing.html#how-it-works">How It Works</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SigraChain. All rights reserved.</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/shared.js"></script>
+  <script>
+    function showMethod(method) {
+      const methods = ['upload', 'hash', 'attestation'];
+      methods.forEach(m => {
+        document.getElementById('method-' + m).classList.toggle('hidden', m !== method);
+        document.getElementById('tab-' + m).setAttribute('aria-selected', String(m === method));
+        document.getElementById('tab-' + m).classList.toggle('btn-accent', m === method);
+        document.getElementById('tab-' + m).classList.toggle('btn-ghost', m !== method);
+      });
+      hideResults();
+    }
+    function hideResults() {
+      ['result-verified', 'result-notfound', 'result-tampered', 'result-conversion'].forEach(id => {
+        document.getElementById(id).classList.add('hidden');
+      });
+    }
+    function handleFile(file) {
+      if (!file) return;
+      document.getElementById('fileInfo').classList.remove('hidden');
+      document.getElementById('fileName').textContent = file.name + ' (' + formatBytes(file.size) + ')';
+      document.getElementById('fileHash').textContent = 'SHA-256: computing...';
+      setTimeout(() => {
+        document.getElementById('fileHash').textContent = 'SHA-256: ' + MOCK_VERIFY_VERIFIED.hash;
+      }, 800);
+    }
+    function verifyDocument() {
+      hideResults();
+      document.getElementById('result-verified').classList.remove('hidden');
+      document.getElementById('result-conversion').classList.remove('hidden');
+    }
+    function verifyByHash() {
+      hideResults();
+      const hash = document.getElementById('hashInput').value.trim();
+      if (hash.length === 64) {
+        document.getElementById('result-verified').classList.remove('hidden');
+        document.getElementById('result-conversion').classList.remove('hidden');
+      } else if (hash.length > 0) {
+        document.getElementById('result-notfound').classList.remove('hidden');
+      }
+    }
+    function verifyByAttestation() {
+      hideResults();
+      const uid = document.getElementById('attestationInput').value.trim();
+      if (uid.length > 10) {
+        document.getElementById('result-verified').classList.remove('hidden');
+        document.getElementById('result-conversion').classList.remove('hidden');
+      } else if (uid.length > 0) {
+        document.getElementById('result-notfound').classList.remove('hidden');
+      }
+    }
+    function demoVerify() {
+      document.getElementById('hashInput').value = MOCK_VERIFY_VERIFIED.hash;
+      verifyByHash();
+    }
+    function toggleDisclosure(btn) {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      btn.nextElementSibling.classList.toggle('open');
+      btn.textContent = expanded ? 'Show technical proof details' : 'Hide technical proof details';
+      const svg = btn.querySelector('svg');
+      if (svg) btn.appendChild(svg);
+    }
+    function shareVerification() {
+      if (navigator.share) {
+        navigator.share({ title: 'SigraChain Verification', text: 'Document verified on-chain', url: window.location.href });
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.href);
+      }
+    }
+  </script>
+</body>
+</html>

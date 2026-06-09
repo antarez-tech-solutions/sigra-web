@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — SigraChain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <div class="app-shell">
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <img src="../assets/sigra-logo-icon.svg" alt="" width="32" height="32">
+        <span>SigraChain</span>
+      </div>
+      <nav>
+        <a href="dashboard.html" aria-current="page">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+          Dashboard
+        </a>
+        <a href="documents.html">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Documents
+        </a>
+        <a href="envelopes.html">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Envelopes
+        </a>
+        <a href="envelope-new.html">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          New Envelope
+        </a>
+        <a href="verify.html">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          Verify
+        </a>
+        <a href="settings.html">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </a>
+        <a href="billing.html">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Billing
+        </a>
+      </nav>
+      <div class="plan-card">
+        <div class="plan-name">Free Plan</div>
+        <div class="plan-usage">3 of 5 docs this month</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:60%;"></div></div>
+        <a href="billing.html" class="btn btn-accent btn-sm w-full mt-3" style="justify-content:center;">Upgrade</a>
+      </div>
+    </aside>
+
+    <main id="main-content" class="main-content" role="main">
+      <div class="topbar">
+        <div class="flex gap-3" style="align-items:center;">
+          <button class="hamburger" aria-label="Open navigation menu" onclick="openSidebar()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div>
+            <h1>Dashboard</h1>
+            <p class="subtitle">Welcome back, Maria</p>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+          <a href="envelope-new.html" class="btn btn-accent btn-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            New Envelope
+          </a>
+          <div class="avatar" aria-label="User avatar">MS</div>
+        </div>
+      </div>
+
+      <div class="stats-grid mb-8">
+        <div class="card stat-card">
+          <div class="stat-value">12</div>
+          <div class="stat-label">Total Documents</div>
+          <div class="stat-change positive">+3 this month</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-value" style="color:var(--warning-text);">4</div>
+          <div class="stat-label">Awaiting Signatures</div>
+          <div class="stat-change">2 near deadline</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-value" style="color:var(--success-text);">8</div>
+          <div class="stat-label">Completed</div>
+          <div class="stat-change positive">+2 this week</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-value" style="color:var(--accent);">3</div>
+          <div class="stat-label">Anchored On-Chain</div>
+          <div class="stat-change">Base network</div>
+        </div>
+      </div>
+
+      <div class="grid grid-3 mb-8">
+        <a href="envelope-new.html" class="card card-hover" style="text-align:center; padding:var(--sp-6); cursor:pointer; text-decoration:none;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" style="margin:0 auto var(--sp-3);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          <div class="font-semibold">New Envelope</div>
+          <div class="text-xs text-muted mt-2">Upload and send for signing</div>
+        </a>
+        <a href="verify.html" class="card card-hover" style="text-align:center; padding:var(--sp-6); cursor:pointer; text-decoration:none;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" style="margin:0 auto var(--sp-3);"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          <div class="font-semibold">Verify Document</div>
+          <div class="text-xs text-muted mt-2">Check authenticity on-chain</div>
+        </a>
+        <a href="documents.html" class="card card-hover" style="text-align:center; padding:var(--sp-6); cursor:pointer; text-decoration:none;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" style="margin:0 auto var(--sp-3);"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <div class="font-semibold">My Documents</div>
+          <div class="text-xs text-muted mt-2">Browse uploaded files</div>
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Recent Activity</h2>
+          <a href="envelopes.html" class="text-sm">View all</a>
+        </div>
+        <table class="data-table" aria-label="Recent envelopes">
+          <thead>
+            <tr>
+              <th scope="col">Envelope</th>
+              <th scope="col">Status</th>
+              <th scope="col">Signers</th>
+              <th scope="col">Date</th>
+              <th scope="col"><span class="sr-only">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cell-primary">NDA with Acme Corp</td>
+              <td><span class="badge badge-anchored">anchored</span></td>
+              <td>2/2 signed</td>
+              <td class="text-muted text-sm">Jun 8, 2026</td>
+              <td><a href="envelope-detail.html" class="btn btn-ghost btn-sm">View</a></td>
+            </tr>
+            <tr>
+              <td class="cell-primary">Supplier Agreement</td>
+              <td><span class="badge badge-pending">pending</span></td>
+              <td>1/3 signed</td>
+              <td class="text-muted text-sm">Jun 7, 2026</td>
+              <td><a href="envelope-detail.html" class="btn btn-ghost btn-sm">View</a></td>
+            </tr>
+            <tr>
+              <td class="cell-primary">Invoice May 2026</td>
+              <td><span class="badge badge-completed">completed</span></td>
+              <td>2/2 signed</td>
+              <td class="text-muted text-sm">Jun 5, 2026</td>
+              <td><a href="envelope-detail.html" class="btn btn-ghost btn-sm">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/shared.js"></script>
+  <script>
+    function openSidebar() {
+      document.getElementById('sidebar').style.display = 'flex';
+      document.getElementById('sidebarOverlay').classList.add('active');
+    }
+    function closeSidebar() {
+      document.getElementById('sidebar').style.display = 'none';
+      document.getElementById('sidebarOverlay').classList.remove('active');
+    }
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    }
+  </script>
+</body>
+</html>

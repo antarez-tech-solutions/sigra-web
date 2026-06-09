@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings — SigraChain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <div class="app-shell">
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="logo"><img src="../assets/sigra-logo-icon.svg" alt="" width="32" height="32"><span>SigraChain</span></div>
+      <nav>
+        <a href="dashboard.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a>
+        <a href="documents.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Documents</a>
+        <a href="envelopes.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Envelopes</a>
+        <a href="envelope-new.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg> New Envelope</a>
+        <a href="verify.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Verify</a>
+        <a href="settings.html" aria-current="page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Settings</a>
+        <a href="billing.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Billing</a>
+      </nav>
+    </aside>
+
+    <main id="main-content" class="main-content" role="main">
+      <div class="topbar">
+        <div class="flex gap-3" style="align-items:center;">
+          <button class="hamburger" aria-label="Open navigation" onclick="openSidebar()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <h1>Settings</h1>
+        </div>
+        <div class="topbar-actions">
+          <div class="avatar" aria-label="User avatar">MS</div>
+        </div>
+      </div>
+
+      <div class="card mb-6">
+        <h2 class="card-title mb-4">Profile</h2>
+        <div class="flex gap-4 mb-6" style="align-items:center;">
+          <div class="avatar" style="width:64px; height:64px; font-size:var(--text-xl);">MS</div>
+          <div>
+            <div class="font-semibold text-lg">Maria Silva</div>
+            <div class="text-sm text-muted">maria@example.com</div>
+            <button class="btn btn-ghost btn-sm mt-2">Change avatar</button>
+          </div>
+        </div>
+        <div class="form-row mb-4">
+          <div class="form-group">
+            <label for="profileName" class="form-label">Full name</label>
+            <input type="text" id="profileName" class="form-input" value="Maria Silva" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="profileEmail" class="form-label">Email</label>
+            <input type="email" id="profileEmail" class="form-input" value="maria@example.com" autocomplete="email">
+          </div>
+        </div>
+        <div class="form-row mb-4">
+          <div class="form-group">
+            <label for="profileCompany" class="form-label">Company</label>
+            <input type="text" id="profileCompany" class="form-input" value="Acme Corp" autocomplete="organization">
+          </div>
+          <div class="form-group">
+            <label for="profileTimezone" class="form-label">Timezone</label>
+            <select id="profileTimezone" class="form-input">
+              <option value="America/Sao_Paulo" selected>America/Sao_Paulo (BRT, UTC-3)</option>
+              <option value="America/New_York">America/New_York (EST, UTC-5)</option>
+              <option value="America/Los_Angeles">America/Los_Angeles (PST, UTC-8)</option>
+              <option value="Europe/London">Europe/London (GMT)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group mb-4">
+          <label for="profileLanguage" class="form-label">Language</label>
+          <select id="profileLanguage" class="form-input" style="max-width:300px;">
+            <option value="en" selected>English</option>
+            <option value="pt-BR">Português (Brasil)</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        <button class="btn btn-accent btn-sm">Save Changes</button>
+      </div>
+
+      <div class="card mb-6">
+        <h2 class="card-title mb-4">Security</h2>
+
+        <div class="mb-6">
+          <h3 class="font-semibold text-sm mb-3">Change Password</h3>
+          <div class="form-row" style="max-width:500px;">
+            <div class="form-group">
+              <label for="currentPass" class="form-label">Current password</label>
+              <input type="password" id="currentPass" class="form-input" autocomplete="current-password">
+            </div>
+            <div class="form-group">
+              <label for="newPass" class="form-label">New password</label>
+              <input type="password" id="newPass" class="form-input" autocomplete="new-password">
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-sm">Update Password</button>
+        </div>
+
+        <div class="mb-6" style="padding:var(--sp-4); background:var(--bg-subtle); border-radius:var(--radius-md);">
+          <div class="flex-between">
+            <div>
+              <h3 class="font-semibold text-sm">Two-Factor Authentication (2FA)</h3>
+              <p class="text-xs text-muted mt-2">Add an extra layer of security with TOTP authenticator app</p>
+            </div>
+            <button class="btn btn-accent btn-sm">Enable 2FA</button>
+          </div>
+        </div>
+
+        <div style="padding:var(--sp-4); background:var(--bg-subtle); border-radius:var(--radius-md);">
+          <h3 class="font-semibold text-sm mb-3">Active Sessions</h3>
+          <div style="border-bottom:1px solid var(--border); padding-bottom:var(--sp-3); margin-bottom:var(--sp-3);">
+            <div class="flex-between">
+              <div>
+                <div class="text-sm font-semibold">Current session</div>
+                <div class="text-xs text-muted">Chrome on macOS · São Paulo, BR · 72.60.244.78</div>
+              </div>
+              <span class="badge badge-completed">Active now</span>
+            </div>
+          </div>
+          <div class="flex-between">
+            <div>
+              <div class="text-sm">Safari on iPhone</div>
+              <div class="text-xs text-muted">São Paulo, BR · Last active 2 hours ago</div>
+            </div>
+            <button class="btn btn-ghost btn-sm" style="color:var(--danger-text);">Revoke</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-6">
+        <h2 class="card-title mb-4">Notifications</h2>
+        <label class="form-check mb-3">
+          <input type="checkbox" checked>
+          <span>Email me when a signer completes</span>
+        </label>
+        <label class="form-check mb-3">
+          <input type="checkbox" checked>
+          <span>Email me when an envelope is anchored on-chain</span>
+        </label>
+        <label class="form-check mb-3">
+          <input type="checkbox">
+          <span>Weekly activity summary</span>
+        </label>
+        <label class="form-check mb-3">
+          <input type="checkbox" checked>
+          <span>Remind signers approaching deadline</span>
+        </label>
+      </div>
+
+      <div class="card" style="border-color:var(--danger);">
+        <h2 class="card-title mb-4" style="color:var(--danger-text);">Danger Zone</h2>
+        <div class="flex-between mb-4" style="padding:var(--sp-4); background:var(--bg-subtle); border-radius:var(--radius-md);">
+          <div>
+            <h3 class="font-semibold text-sm">Export All Data</h3>
+            <p class="text-xs text-muted mt-2">Download all documents, envelopes, and audit trails (GDPR)</p>
+          </div>
+          <button class="btn btn-ghost btn-sm">Request Export</button>
+        </div>
+        <div class="flex-between" style="padding:var(--sp-4); background:var(--danger-bg); border-radius:var(--radius-md);">
+          <div>
+            <h3 class="font-semibold text-sm" style="color:var(--danger-text);">Delete Account</h3>
+            <p class="text-xs text-muted mt-2">Permanently delete your account and all associated data</p>
+          </div>
+          <button class="btn btn-danger btn-sm">Delete Account</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function openSidebar() { document.getElementById('sidebar').style.display = 'flex'; document.getElementById('sidebarOverlay').classList.add('active'); }
+    function closeSidebar() { document.getElementById('sidebar').style.display = 'none'; document.getElementById('sidebarOverlay').classList.remove('active'); }
+  </script>
+</body>
+</html>

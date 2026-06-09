@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Envelope — SigraChain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <div class="app-shell">
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="logo"><img src="../assets/sigra-logo-icon.svg" alt="" width="32" height="32"><span>SigraChain</span></div>
+      <nav>
+        <a href="dashboard.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a>
+        <a href="documents.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Documents</a>
+        <a href="envelopes.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Envelopes</a>
+        <a href="envelope-new.html" aria-current="page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg> New Envelope</a>
+        <a href="verify.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Verify</a>
+        <a href="settings.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Settings</a>
+        <a href="billing.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Billing</a>
+      </nav>
+    </aside>
+
+    <main id="main-content" class="main-content" role="main">
+      <div class="topbar">
+        <div class="flex gap-3" style="align-items:center;">
+          <button class="hamburger" aria-label="Open navigation" onclick="openSidebar()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <h1>Create Envelope</h1>
+        </div>
+      </div>
+
+      <div class="stepper" role="list" aria-label="Envelope creation steps">
+        <div class="stepper-step done" role="listitem">
+          <div class="stepper-circle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="stepper-label">Document</span>
+        </div>
+        <div class="stepper-line" style="background:var(--success);"></div>
+        <div class="stepper-step active" role="listitem">
+          <div class="stepper-circle">2</div>
+          <span class="stepper-label">Signers</span>
+        </div>
+        <div class="stepper-line"></div>
+        <div class="stepper-step" role="listitem">
+          <div class="stepper-circle">3</div>
+          <span class="stepper-label">Review & Send</span>
+        </div>
+      </div>
+
+      <div class="card mb-6" style="border-left:3px solid var(--success);">
+        <div class="flex-between">
+          <div>
+            <div class="text-xs font-semibold" style="color:var(--success-text); margin-bottom:var(--sp-1);">STEP 1 — DOCUMENT</div>
+            <div class="font-semibold">NDA_AcmeCorp.pdf</div>
+            <div class="text-sm text-muted">240 KB · SHA-256: a1b2c3d4...f6a1b2</div>
+          </div>
+          <button class="btn btn-ghost btn-sm">Change</button>
+        </div>
+      </div>
+
+      <div class="card mb-6" style="border-left:3px solid var(--accent);">
+        <div class="text-xs font-semibold mb-4" style="color:var(--accent);">STEP 2 — ADD SIGNERS</div>
+
+        <div class="form-group">
+          <label for="envTitle" class="form-label">Envelope title</label>
+          <input type="text" id="envTitle" class="form-input" value="NDA with Acme Corp" placeholder="e.g., NDA with Acme Corp">
+        </div>
+
+        <div class="form-row mb-4">
+          <div class="form-group">
+            <label for="signingOrder" class="form-label">Signing order</label>
+            <select id="signingOrder" class="form-input">
+              <option value="sequential" selected>Sequential (one at a time)</option>
+              <option value="parallel">Parallel (all at once)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="deadline" class="form-label">Deadline (optional)</label>
+            <input type="date" id="deadline" class="form-input" value="2026-06-15">
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label">Signers</label>
+          <div style="display:flex; align-items:center; gap:var(--sp-3); padding:var(--sp-3); background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:var(--sp-2);">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent-bg); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:var(--text-xs); font-weight:var(--fw-bold); flex-shrink:0;">1</div>
+            <input type="text" class="form-input" value="Maria Silva" style="max-width:180px;" placeholder="Name">
+            <input type="email" class="form-input" value="maria@example.com" placeholder="Email">
+            <button class="btn btn-ghost btn-sm" aria-label="Remove signer" style="flex-shrink:0; color:var(--text-muted);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <div style="display:flex; align-items:center; gap:var(--sp-3); padding:var(--sp-3); background:var(--bg-subtle); border-radius:var(--radius-md); margin-bottom:var(--sp-2);">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent-bg); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:var(--text-xs); font-weight:var(--fw-bold); flex-shrink:0;">2</div>
+            <input type="text" class="form-input" value="John Smith" style="max-width:180px;" placeholder="Name">
+            <input type="email" class="form-input" value="john@acmecorp.com" placeholder="Email">
+            <button class="btn btn-ghost btn-sm" aria-label="Remove signer" style="flex-shrink:0; color:var(--text-muted);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <button class="btn btn-ghost btn-sm mt-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Signer
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="message" class="form-label">Message to signers (optional)</label>
+          <textarea id="message" class="form-input" placeholder="Add a personal message to the signing invitation email..." style="min-height:80px;"></textarea>
+        </div>
+      </div>
+
+      <div class="flex gap-3" style="justify-content:flex-end;">
+        <button class="btn btn-ghost">Save as Draft</button>
+        <button class="btn btn-accent" onclick="window.location.href='envelope-detail.html'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send for Signing
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function openSidebar() { document.getElementById('sidebar').style.display = 'flex'; document.getElementById('sidebarOverlay').classList.add('active'); }
+    function closeSidebar() { document.getElementById('sidebar').style.display = 'none'; document.getElementById('sidebarOverlay').classList.remove('active'); }
+  </script>
+</body>
+</html>

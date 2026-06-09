@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Document — SigraChain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <div class="public-page">
+    <header class="public-header" role="banner">
+      <div class="logo">
+        <img src="../assets/sigra-logo.svg" alt="SigraChain" height="28">
+      </div>
+      <div class="text-sm text-muted">Signing invitation from <strong class="text-primary">Maria Silva</strong></div>
+    </header>
+
+    <main id="main-content" style="max-width:1000px; margin:var(--sp-8) auto; padding:0 var(--sp-4);">
+      <div class="mb-6">
+        <h1 style="font-size:var(--text-xl); font-weight:var(--fw-bold); margin-bottom:var(--sp-1);">NDA with Acme Corp</h1>
+        <p class="text-muted text-sm">You've been invited to sign this document. Please review the content carefully before signing.</p>
+      </div>
+
+      <div class="signing-layout">
+        <div class="card doc-preview">
+          <div class="flex-between mb-4">
+            <h2 style="font-size:var(--text-base); font-weight:var(--fw-semibold);">Document Preview</h2>
+            <span class="text-xs text-muted">NDA_AcmeCorp.pdf · 240 KB · Page 1 of 3</span>
+          </div>
+          <div class="doc-preview-content" role="document" aria-label="Document content">
+            <div class="text-center mb-8">
+              <h2 style="font-size:var(--text-lg); font-weight:var(--fw-bold); color:#1a1a1a;">NON-DISCLOSURE AGREEMENT</h2>
+              <p style="font-size:var(--text-sm); color:#666;">Effective Date: June 8, 2026</p>
+            </div>
+            <p style="color:#333;">
+              This Non-Disclosure Agreement ("Agreement") is entered into as of the Effective Date by and between:<br><br>
+              <strong>Disclosing Party:</strong> Acme Corporation, a Delaware corporation ("Acme")<br>
+              <strong>Receiving Party:</strong> The undersigned individual or entity ("Recipient")<br><br>
+              <strong>1. Confidential Information</strong><br>
+              "Confidential Information" means any non-public technical, business, financial, or other information disclosed by Acme to Recipient, whether orally, in writing, or by inspection of tangible objects...<br><br>
+              <strong>2. Obligations</strong><br>
+              Recipient agrees to: (a) hold all Confidential Information in strict confidence; (b) not disclose Confidential Information to any third parties without prior written consent; (c) use Confidential Information solely for the Purpose...<br><br>
+              <strong>3. Term</strong><br>
+              This Agreement shall remain in effect for a period of two (2) years from the Effective Date...<br><br>
+              <em style="color:#999;">[Preview truncated — full document available after signing]</em>
+            </p>
+          </div>
+        </div>
+
+        <div class="signing-panel">
+          <div class="card mb-4">
+            <label class="form-check">
+              <input type="checkbox" id="consent" checked>
+              <span>
+                <strong>I agree to sign electronically.</strong>
+                <span class="text-muted" style="display:block; margin-top:var(--sp-1);">
+                  My electronic signature has the same legal validity as a handwritten signature under ESIGN Act, eIDAS, and MP 2.200-2.
+                </span>
+              </span>
+            </label>
+          </div>
+
+          <div class="card mb-4">
+            <h3 style="font-size:var(--text-sm); font-weight:var(--fw-semibold); margin-bottom:var(--sp-3);">Your Signature</h3>
+            <div class="flex gap-2 mb-4" role="tablist" aria-label="Signature method">
+              <button class="btn btn-accent btn-sm" role="tab" aria-selected="true" id="tab-draw" onclick="showSignatureMethod('draw')">Draw</button>
+              <button class="btn btn-ghost btn-sm" role="tab" aria-selected="false" id="tab-type" onclick="showSignatureMethod('type')">Type</button>
+            </div>
+
+            <div id="sig-draw" role="tabpanel" aria-labelledby="tab-draw">
+              <div class="signature-wrap">
+                <canvas id="signatureCanvas" class="signature-canvas" aria-label="Draw your signature"></canvas>
+                <div class="flex gap-2">
+                  <button class="btn btn-ghost btn-sm" onclick="clearCanvas()" aria-label="Clear signature">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                    Clear
+                  </button>
+                  <button class="btn btn-ghost btn-sm" onclick="undoStroke()" aria-label="Undo last stroke">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                    Undo
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div id="sig-type" class="hidden" role="tabpanel" aria-labelledby="tab-type">
+              <div class="form-group">
+                <label for="typedSignature" class="form-label">Type your full name</label>
+                <input type="text" id="typedSignature" class="form-input" placeholder="Your full legal name" style="font-size:var(--text-lg); text-align:center;" value="John Smith" autocomplete="name">
+              </div>
+              <div class="signature-wrap" style="min-height:80px;">
+                <span id="typedPreview" style="font-family:'Brush Script MT','Segoe Script',cursive; font-size:var(--text-2xl); color:#1a1a1a;">John Smith</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-accent w-full btn-lg" id="signBtn" onclick="showSignedConfirmation()" aria-label="Sign this document">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            Sign Document
+          </button>
+
+          <div id="signed-confirmation" class="card card-success hidden mt-4" style="text-align:center;" role="alert">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--success-text)" stroke-width="2" stroke-linecap="round" style="margin:0 auto var(--sp-3);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h3 class="text-success" style="margin-bottom:var(--sp-2);">Document Signed!</h3>
+            <p class="text-sm text-muted mb-4">Your signature has been recorded. The document owner will be notified. Once all signers complete, the proof will be anchored on-chain.</p>
+            <div style="padding:var(--sp-3); background:var(--bg-subtle); border-radius:var(--radius-md);">
+              <p class="text-xs text-muted">Signed by: <strong class="text-primary">John Smith</strong></p>
+              <p class="text-xs text-muted">Date: <strong class="text-primary">Jun 8, 2026 · 17:00 UTC</strong></p>
+            </div>
+            <div class="mt-4" style="padding:var(--sp-3); background:var(--accent-bg); border-radius:var(--radius-md);">
+              <p class="text-xs" style="color:var(--accent);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:inline; vertical-align:middle;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                Powered by SigraChain — <a href="verify.html" style="color:var(--accent); font-weight:var(--fw-semibold);">verify this document</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('signatureCanvas');
+    const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const strokes = [];
+    let currentStroke = [];
+    let drawing = false;
+
+    function initCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+      ctx.strokeStyle = '#1a1a1a';
+      ctx.lineWidth = 2;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+    }
+    initCanvas();
+    window.addEventListener('resize', () => { initCanvas(); redrawAll(); });
+
+    function getPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      const clientX = e.clientX || (e.touches && e.touches[0] && e.touches[0].clientX);
+      const clientY = e.clientY || (e.touches && e.touches[0] && e.touches[0].clientY);
+      return { x: clientX - rect.left, y: clientY - rect.top };
+    }
+
+    canvas.addEventListener('pointerdown', e => {
+      e.preventDefault();
+      drawing = true;
+      currentStroke = [getPos(e)];
+      canvas.setPointerCapture(e.pointerId);
+    });
+
+    canvas.addEventListener('pointermove', e => {
+      if (!drawing) return;
+      e.preventDefault();
+      const pos = getPos(e);
+      currentStroke.push(pos);
+      if (currentStroke.length > 1) {
+        const prev = currentStroke[currentStroke.length - 2];
+        ctx.beginPath();
+        ctx.moveTo(prev.x, prev.y);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+      }
+    });
+
+    canvas.addEventListener('pointerup', () => {
+      if (drawing && currentStroke.length > 0) {
+        strokes.push([...currentStroke]);
+      }
+      drawing = false;
+      currentStroke = [];
+    });
+
+    canvas.addEventListener('pointerleave', () => {
+      if (drawing && currentStroke.length > 0) {
+        strokes.push([...currentStroke]);
+      }
+      drawing = false;
+      currentStroke = [];
+    });
+
+    function clearCanvas() {
+      strokes.length = 0;
+      const rect = canvas.getBoundingClientRect();
+      ctx.clearRect(0, 0, rect.width, rect.height);
+    }
+
+    function undoStroke() {
+      strokes.pop();
+      redrawAll();
+    }
+
+    function redrawAll() {
+      const rect = canvas.getBoundingClientRect();
+      ctx.clearRect(0, 0, rect.width, rect.height);
+      strokes.forEach(stroke => {
+        if (stroke.length < 2) return;
+        ctx.beginPath();
+        ctx.moveTo(stroke[0].x, stroke[0].y);
+        for (let i = 1; i < stroke.length; i++) {
+          ctx.lineTo(stroke[i].x, stroke[i].y);
+        }
+        ctx.stroke();
+      });
+    }
+
+    function showSignatureMethod(method) {
+      document.getElementById('sig-draw').classList.toggle('hidden', method !== 'draw');
+      document.getElementById('sig-type').classList.toggle('hidden', method !== 'type');
+      document.getElementById('tab-draw').setAttribute('aria-selected', String(method === 'draw'));
+      document.getElementById('tab-type').setAttribute('aria-selected', String(method === 'type'));
+      document.getElementById('tab-draw').classList.toggle('btn-accent', method === 'draw');
+      document.getElementById('tab-draw').classList.toggle('btn-ghost', method !== 'draw');
+      document.getElementById('tab-type').classList.toggle('btn-accent', method === 'type');
+      document.getElementById('tab-type').classList.toggle('btn-ghost', method !== 'type');
+    }
+
+    document.getElementById('typedSignature').addEventListener('input', function(e) {
+      document.getElementById('typedPreview').textContent = e.target.value || 'Your Name';
+    });
+
+    function showSignedConfirmation() {
+      document.getElementById('signBtn').classList.add('btn-loading');
+      setTimeout(() => {
+        document.getElementById('signBtn').classList.remove('btn-loading');
+        document.getElementById('signBtn').classList.add('hidden');
+        document.getElementById('signed-confirmation').classList.remove('hidden');
+        document.getElementById('signed-confirmation').scrollIntoView({ behavior: 'smooth' });
+      }, 1200);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing — SigraChain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <div class="app-shell">
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="logo"><img src="../assets/sigra-logo-icon.svg" alt="" width="32" height="32"><span>SigraChain</span></div>
+      <nav>
+        <a href="dashboard.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a>
+        <a href="documents.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Documents</a>
+        <a href="envelopes.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Envelopes</a>
+        <a href="envelope-new.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg> New Envelope</a>
+        <a href="verify.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Verify</a>
+        <a href="settings.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Settings</a>
+        <a href="billing.html" aria-current="page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Billing</a>
+      </nav>
+    </aside>
+
+    <main id="main-content" class="main-content" role="main">
+      <div class="topbar">
+        <div class="flex gap-3" style="align-items:center;">
+          <button class="hamburger" aria-label="Open navigation" onclick="openSidebar()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <h1>Billing & Subscription</h1>
+        </div>
+      </div>
+
+      <div class="card mb-6">
+        <div class="flex-between flex-wrap gap-4">
+          <div>
+            <div class="text-xs font-semibold text-muted" style="text-transform:uppercase; letter-spacing:0.05em;">Current Plan</div>
+            <h2 style="font-size:var(--text-2xl); font-weight:var(--fw-extrabold); margin-top:var(--sp-1);">Free Plan</h2>
+            <p class="text-sm text-muted">5 documents per month · Email signing · On-chain verification</p>
+          </div>
+          <a href="pricing.html" class="btn btn-accent">Upgrade Plan</a>
+        </div>
+      </div>
+
+      <div class="card mb-6">
+        <h2 class="card-title mb-4">Usage This Month</h2>
+        <div class="mb-6">
+          <div class="flex-between text-sm mb-2">
+            <span>Documents signed</span>
+            <span class="font-semibold">3 / 5</span>
+          </div>
+          <div style="background:var(--border); height:8px; border-radius:var(--radius-full); overflow:hidden;">
+            <div style="background:var(--accent); height:100%; width:60%; border-radius:var(--radius-full); transition:width var(--duration-normal) var(--ease-out);"></div>
+          </div>
+          <p class="text-xs text-muted mt-2">2 remaining. Resets on Jul 1, 2026.</p>
+        </div>
+        <div class="stats-grid">
+          <div style="text-align:center; padding:var(--sp-4); background:var(--bg-subtle); border-radius:var(--radius-md);">
+            <div style="font-size:var(--text-2xl); font-weight:var(--fw-extrabold);">12</div>
+            <div class="text-xs text-muted">Total documents</div>
+          </div>
+          <div style="text-align:center; padding:var(--sp-4); background:var(--bg-subtle); border-radius:var(--radius-md);">
+            <div style="font-size:var(--text-2xl); font-weight:var(--fw-extrabold);">8</div>
+            <div class="text-xs text-muted">Signatures collected</div>
+          </div>
+          <div style="text-align:center; padding:var(--sp-4); background:var(--bg-subtle); border-radius:var(--radius-md);">
+            <div style="font-size:var(--text-2xl); font-weight:var(--fw-extrabold); color:var(--accent);">3</div>
+            <div class="text-xs text-muted">Anchored on-chain</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-6">
+        <h2 class="card-title mb-4">Payment Method</h2>
+        <div class="flex-between" style="padding:var(--sp-4); background:var(--bg-subtle); border-radius:var(--radius-md);">
+          <div class="flex gap-3" style="align-items:center;">
+            <svg width="32" height="24" viewBox="0 0 32 24" fill="none"><rect width="32" height="24" rx="4" fill="#1A1F71"/><text x="16" y="16" text-anchor="middle" fill="white" font-size="10" font-weight="bold">VISA</text></svg>
+            <div>
+              <div class="text-sm font-semibold">Visa ending in 4242</div>
+              <div class="text-xs text-muted">Expires 12/2027</div>
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-sm">Update</button>
+        </div>
+        <p class="text-xs text-muted mt-3">Free plan — no charges. Payment method stored for future upgrades.</p>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title mb-4">Invoice History</h2>
+        <table class="data-table" aria-label="Invoice history">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Description</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Status</th>
+              <th scope="col"><span class="sr-only">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-muted text-sm">Jun 1, 2026</td>
+              <td class="cell-primary">Free Plan — June 2026</td>
+              <td>$0.00</td>
+              <td><span class="badge badge-completed">Paid</span></td>
+              <td><button class="btn btn-ghost btn-sm" aria-label="Download invoice">PDF</button></td>
+            </tr>
+            <tr>
+              <td class="text-muted text-sm">May 1, 2026</td>
+              <td class="cell-primary">Free Plan — May 2026</td>
+              <td>$0.00</td>
+              <td><span class="badge badge-completed">Paid</span></td>
+              <td><button class="btn btn-ghost btn-sm" aria-label="Download invoice">PDF</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function openSidebar() { document.getElementById('sidebar').style.display = 'flex'; document.getElementById('sidebarOverlay').classList.add('active'); }
+    function closeSidebar() { document.getElementById('sidebar').style.display = 'none'; document.getElementById('sidebarOverlay').classList.remove('active'); }
+  </script>
+</body>
+</html>
