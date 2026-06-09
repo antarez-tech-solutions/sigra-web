@@ -1,23 +1,33 @@
-import { ReactNode, useState } from 'react'
+import { ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Home, FileText, Send, Settings, LogOut, X, Menu } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import { Home, FileText, Send, Settings, CreditCard, LogOut, X } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
+import { useAuth } from '../contexts/AuthContext'
 
 interface SidebarProps {
   isOpen: boolean
   onClose: () => void
 }
 
-const navItems = [
-  { to: '/app/dashboard', icon: Home, label: 'Dashboard' },
-  { to: '/app/documents', icon: FileText, label: 'Documents' },
-  { to: '/app/envelopes', icon: Send, label: 'Envelopes' },
-  { to: '/app/settings', icon: Settings, label: 'Settings' },
-]
-
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
+  const { t } = useTranslation()
   const location = useLocation()
   const { theme } = useTheme()
+  const { logout } = useAuth()
+
+  const navItems = [
+    { to: '/app/dashboard', icon: Home, label: t('nav.dashboard') },
+    { to: '/app/documents', icon: FileText, label: t('nav.documents') },
+    { to: '/app/envelopes', icon: Send, label: t('nav.envelopes') },
+    { to: '/app/settings', icon: Settings, label: t('nav.settings') },
+    { to: '/app/billing', icon: CreditCard, label: 'Billing' },
+  ]
+
+  const handleLogout = async () => {
+    await logout()
+    onClose()
+  }
 
   return (
     <>
@@ -82,13 +92,13 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           </nav>
 
           <div className="p-4 border-t" style={{ borderColor: 'var(--border-primary)' }}>
-            <Link
-              to="/login"
-              className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-error hover:bg-error-light dark:hover:bg-error/10 transition-colors"
+            <button
+              onClick={handleLogout}
+              className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-error hover:bg-error-light dark:hover:bg-error/10 transition-colors"
             >
               <LogOut className="w-5 h-5" />
-              Log Out
-            </Link>
+              {t('nav.logout')}
+            </button>
           </div>
         </div>
       </aside>
