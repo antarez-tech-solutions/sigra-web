@@ -38,23 +38,23 @@ export function LandingPage() {
   const benefits = [
     {
       icon: Lock,
-      title: 'Tamper-Proof',
-      description: 'Every signature is cryptographically signed and anchored on-chain, making it impossible to alter.',
+      title: t('landing.benefits.tamperProof.title'),
+      description: t('landing.benefits.tamperProof.description'),
     },
     {
       icon: FileSignature,
-      title: 'Legally Valid',
-      description: 'Compliant with eIDAS, ESIGN Act, and other major electronic signature regulations worldwide.',
+      title: t('landing.benefits.legallyValid.title'),
+      description: t('landing.benefits.legallyValid.description'),
     },
     {
       icon: Globe,
-      title: 'Global Verification',
-      description: 'Anyone can verify document authenticity using the public verification portal—no account needed.',
+      title: t('landing.benefits.globalVerification.title'),
+      description: t('landing.benefits.globalVerification.description'),
     },
     {
       icon: Award,
-      title: 'Enterprise Ready',
-      description: 'SOC 2 Type II compliant with SLA guarantees, SSO, and dedicated support for enterprise clients.',
+      title: t('landing.benefits.enterpriseReady.title'),
+      description: t('landing.benefits.enterpriseReady.description'),
     },
   ]
 
@@ -124,7 +124,7 @@ export function LandingPage() {
       <section className="py-20 bg-muted/30">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Choose SigraChain?</h2>
+            <h2 className="text-4xl font-bold mb-4">{t('landing.features.whyChoose')}</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               The most trusted platform for blockchain-anchored electronic signatures
             </p>

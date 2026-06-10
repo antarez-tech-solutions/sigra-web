@@ -54,17 +54,23 @@
     "loginSuccess": "Login realizado com sucesso!",
     "registerSuccess": "Conta criada com sucesso!",
     "logoutSuccess": "Logout realizado com sucesso",
-    "invalidCredentials": "E-mail ou senha inválidos"
+    "invalidCredentials": "E-mail ou senha inválidos",
+    "orContinueWith": "Ou continue com",
+    "rememberMe": "Lembrar-me",
+    "demoCredentials": "Credenciais de demonstração: demo@sigra.io / password"
   },
   "landing": {
     "hero": {
       "title": "Cada Assinatura, Para Sempre Verificável",
       "subtitle": "Assinaturas eletrônicas ancoradas em blockchain com verificação independente. Sem dependência de fornecedor, sem expiração.",
       "cta": "Comece Grátis",
-      "ctaSecondary": "Verificar Documento"
+      "ctaSecondary": "Verificar Documento",
+      "noCreditCard": "Sem cartão de crédito • 5 documentos grátis por mês"
     },
     "features": {
       "title": "Por que SigraChain?",
+      "subtitle": "Construído no Ethereum L2 (Base & Arbitrum) para prova transparente e permanente",
+      "whyChoose": "Por que escolher SigraChain?",
       "upload": {
         "title": "Envie",
         "description": "Envie qualquer documento PDF para começar"
@@ -76,9 +82,7 @@
       "anchor": {
         "title": "Ancore",
         "description": "Prova ancorada no Ethereum L2 (Base & Arbitrum)"
-      }
-    },
-    "benefits": {
+      },
       "independent": {
         "title": "Verificação Independente",
         "description": "Qualquer pessoa pode verificar documentos sem precisar do SigraChain"
@@ -91,6 +95,31 @@
         "title": "Custo-Efetivo",
         "description": "Ancoragem em lote reduz custos para centavos por documento"
       }
+    },
+    "benefits": {
+      "title": "Construído para Confiança",
+      "tamperProof": {
+        "title": "À Prova de Violação",
+        "description": "Cada assinatura é criptograficamente assinada e ancorada na blockchain, tornando impossível alterar."
+      },
+      "legallyValid": {
+        "title": "Legalmente Válido",
+        "description": "Compatível com eIDAS, ESIGN Act e outras principais regulamentações de assinatura eletrônica em todo o mundo."
+      },
+      "globalVerification": {
+        "title": "Verificação Global",
+        "description": "Qualquer pessoa pode verificar a autenticidade do documento usando o portal público de verificação—sem necessidade de conta."
+      },
+      "enterpriseReady": {
+        "title": "Pronto para Empresas",
+        "description": "Compatível com SOC 2 Type II com garantias de SLA, SSO e suporte dedicado para clientes corporativos."
+      }
+    },
+    "stats": {
+      "documentsSigned": "Documentos Assinados",
+      "activeUsers": "Usuários Ativos",
+      "uptime": "Disponibilidade",
+      "support": "Suporte"
     }
   },
   "dashboard": {
@@ -159,6 +188,115 @@
     "notFound": {
       "title": "Não Encontrado",
       "description": "Este documento não foi assinado no SigraChain"
+    },
+    "errors": {
+      "enterHash": "Por favor, insira um hash de documento",
+      "verificationFailed": "Falha ao verificar documento"
+    },
+    "howToFind": {
+      "title": "Como encontrar o hash do seu documento:",
+      "description": "O hash é uma string de 66 caracteres começando com \"0x\" que foi fornecida quando o documento foi assinado. Você pode encontrá-lo na página de detalhes do documento assinado ou no e-mail de confirmação."
+    },
+    "details": {
+      "title": "Detalhes do Documento",
+      "documentId": "ID do Documento",
+      "envelopeTitle": "Título do Envelope",
+      "signedBy": "Assinado Por",
+      "anchoredAt": "Ancorado Em",
+      "signer": "Signatário",
+      "signed": "Assinado",
+      "blockchainProof": "Prova Blockchain",
+      "network": "Rede",
+      "ethereumBase": "Ethereum L2 (Base)",
+      "merkleRoot": "Raiz Merkle",
+      "transaction": "Transação",
+      "viewOnExplorer": "Ver no Explorador de Blocos"
+    },
+    "benefits": {
+      "independentVerification": {
+        "title": "Verificação Independente",
+        "description": "Verifique documentos sem precisar de uma conta SigraChain"
+      },
+      "instantResults": {
+        "title": "Resultados Instantâneos",
+        "description": "Obtenha resultados de verificação em segundos com prova blockchain completa"
+      },
+      "cryptographicProof": {
+        "title": "Prova Criptográfica",
+        "description": "Verificação de prova Merkle garante a integridade do documento"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Escolha Seu Plano",
+    "subtitle": "Comece grátis. Atualize quando precisar. Todos os planos incluem ancoragem blockchain.",
+    "billingToggle": {
+      "monthly": "Mensal",
+      "annual": "Anual",
+      "save": "Economize 20%"
+    },
+    "plans": {
+      "free": {
+        "name": "Grátis",
+        "description": "Perfeito para experimentar o SigraChain",
+        "cta": "Começar",
+        "features": [
+          "5 documentos por mês",
+          "2 signatários por documento",
+          "Suporte por e-mail",
+          "Verificação pública",
+          "Análises básicas"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "Para profissionais e pequenas equipes",
+        "cta": "Iniciar Teste Grátis",
+        "mostPopular": "Mais Popular",
+        "features": [
+          "Documentos ilimitados",
+          "10 signatários por documento",
+          "Suporte prioritário",
+          "Análises avançadas",
+          "Marca personalizada",
+          "Acesso à API",
+          "Logs de auditoria"
+        ]
+      },
+      "business": {
+        "name": "Business",
+        "description": "Para empresas em crescimento",
+        "cta": "Falar com Vendas",
+        "features": [
+          "Tudo no Pro",
+          "Signatários ilimitados",
+          "Operações em massa",
+          "Integração SSO",
+          "Suporte dedicado",
+          "Workflows personalizados",
+          "Garantia de SLA",
+          "Segurança avançada"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "Para grandes organizações",
+        "cta": "Falar com Vendas",
+        "features": [
+          "Tudo no Business",
+          "Integrações personalizadas",
+          "Implantação on-premise",
+          "Suporte telefônico 24/7",
+          "Gerente de conta dedicado",
+          "SLA personalizado",
+          "Conformidade avançada",
+          "Solução white-label"
+        ]
+      }
+    },
+    "price": {
+      "perMonth": "/mês",
+      "contactUs": "Entre em contato"
     }
   },
   "settings": {

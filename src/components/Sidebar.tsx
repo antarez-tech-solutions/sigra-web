@@ -39,31 +39,49 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
       <aside
         className={`
-          fixed top-0 left-0 h-full w-64 z-50
+          fixed top-0 left-0 h-full z-50
           transform transition-transform duration-300 ease-in-out
           lg:translate-x-0 lg:static lg:z-0
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
         `}
         style={{
+          width: '320px',
+          minWidth: '320px',
+          maxWidth: '320px',
+          flexShrink: 0,
           backgroundColor: theme === 'dark' ? 'var(--bg-secondary)' : '#FFFFFF',
           borderRight: `1px solid var(--border-primary)`,
+          boxShadow: theme === 'dark' ? 'none' : '0 0 20px rgba(0, 0, 0, 0.05)',
         }}
       >
-        <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between p-6 border-b" style={{ borderColor: 'var(--border-primary)' }}>
-            <Link to="/" className="flex items-center gap-2" onClick={onClose}>
-              <img src="/logo.svg" alt="SigraChain" className="h-8 w-auto" />
-              <span className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>SigraChain</span>
+        <div className="flex flex-col h-full w-full">
+          {/* Logo Section */}
+          <div 
+            className="flex items-center justify-between px-8 py-6 border-b"
+            style={{ 
+              borderColor: 'var(--border-primary)',
+              backgroundColor: theme === 'dark' ? 'var(--bg-primary)' : '#FAFAFA',
+            }}
+          >
+            <Link to="/" className="flex items-center gap-4 flex-shrink-0" onClick={onClose}>
+              <img src="/logo-icon.svg" alt="SigraChain" className="h-10 w-auto flex-shrink-0" />
+              <span 
+                className="text-2xl font-bold flex-shrink-0"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                SigraChain
+              </span>
             </Link>
             <button
               onClick={onClose}
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex-shrink-0"
             >
               <X className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
             </button>
           </div>
 
-          <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
+          {/* Navigation */}
+          <nav className="flex-1 px-6 py-8 space-y-3 overflow-y-auto">
             {navItems.map((item) => {
               const isActive = location.pathname === item.to
               return (
@@ -72,31 +90,39 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                   to={item.to}
                   onClick={onClose}
                   className={`
-                    flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium
-                    transition-all duration-200
+                    flex items-center gap-5 px-6 py-4 rounded-lg text-base font-medium
+                    transition-all duration-200 w-full group flex-shrink-0
                     ${isActive
-                      ? 'bg-primary text-white shadow-md shadow-primary/25'
-                      : 'hover:bg-gray-100 dark:hover:bg-gray-800'
+                      ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                      : 'hover:bg-gray-100 dark:hover:bg-gray-800/50'
                     }
                   `}
                   style={{
                     color: isActive ? '#FFFFFF' : 'var(--text-secondary)',
                   }}
                 >
-                  <item.icon className="w-5 h-5" />
-                  {item.label}
+                  <item.icon 
+                    className={`w-6 h-6 transition-transform group-hover:scale-110 flex-shrink-0 ${
+                      isActive ? 'drop-shadow-sm' : ''
+                    }`}
+                  />
+                  <span className="truncate">{item.label}</span>
                 </Link>
               )
             })}
           </nav>
 
-          <div className="p-4 border-t" style={{ borderColor: 'var(--border-primary)' }}>
+          {/* Logout Section */}
+          <div 
+            className="px-6 py-6 border-t"
+            style={{ borderColor: 'var(--border-primary)' }}
+          >
             <button
               onClick={handleLogout}
-              className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-error hover:bg-error-light dark:hover:bg-error/10 transition-colors"
+              className="w-full flex items-center gap-5 px-6 py-4 rounded-lg text-base font-medium text-error hover:bg-error/10 dark:hover:bg-error/5 transition-all duration-200 group flex-shrink-0"
             >
-              <LogOut className="w-5 h-5" />
-              {t('nav.logout')}
+              <LogOut className="w-6 h-6 transition-transform group-hover:scale-110 flex-shrink-0" />
+              <span className="truncate">{t('nav.logout')}</span>
             </button>
           </div>
         </div>

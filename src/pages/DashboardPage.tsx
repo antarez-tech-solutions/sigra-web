@@ -97,32 +97,32 @@ export function DashboardPage() {
     <AppShell title={t('dashboard.title')}>
       <div className="max-w-7xl mx-auto">
         {/* Welcome Section */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">
+        <div className="mb-6 md:mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold mb-2">
             {t('dashboard.welcome', { name: user?.firstName })}
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-sm md:text-base text-muted-foreground">
             Here's what's happening with your documents today.
           </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon
             return (
               <Card key={index} className="relative overflow-hidden">
                 <div className="flex items-start justify-between">
-                  <div>
-                    <p className="text-sm text-muted-foreground mb-1">{stat.label}</p>
-                    <p className="text-3xl font-bold">{stat.value}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs sm:text-sm text-muted-foreground mb-1">{stat.label}</p>
+                    <p className="text-2xl sm:text-3xl font-bold">{stat.value}</p>
                   </div>
-                  <div className={`p-3 rounded-lg ${stat.bgColor}`}>
-                    <Icon className={`w-6 h-6 ${stat.color}`} />
+                  <div className={`p-2 sm:p-3 rounded-lg ${stat.bgColor} flex-shrink-0 ml-2`}>
+                    <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.color}`} />
                   </div>
                 </div>
-                <div className="mt-4 flex items-center text-sm text-accent">
-                  <TrendingUp className="w-4 h-4 mr-1" />
+                <div className="mt-3 sm:mt-4 flex items-center text-xs sm:text-sm text-accent">
+                  <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0" />
                   <span>+12% from last month</span>
                 </div>
               </Card>
@@ -131,21 +131,21 @@ export function DashboardPage() {
         </div>
 
         {/* Quick Actions */}
-        <div className="mb-8">
-          <h2 className="text-xl font-bold mb-4">{t('dashboard.quickActions.title')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="mb-6 md:mb-8">
+          <h2 className="text-lg md:text-xl font-bold mb-3 md:mb-4">{t('dashboard.quickActions.title')}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
             <Card className="hover:border-primary/50 cursor-pointer transition-colors">
               <button
                 onClick={() => navigate('/app/envelopes/new')}
                 className="w-full text-left"
               >
-                <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <Plus className="w-6 h-6 text-primary" />
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="p-2 sm:p-3 rounded-lg bg-primary/10 flex-shrink-0">
+                    <Plus className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">{t('dashboard.quickActions.newEnvelope')}</h3>
-                    <p className="text-sm text-muted-foreground">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-sm sm:text-base font-semibold mb-1 truncate">{t('dashboard.quickActions.newEnvelope')}</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground">
                       Create and send for signatures
                     </p>
                   </div>
@@ -158,13 +158,13 @@ export function DashboardPage() {
                 onClick={() => navigate('/app/documents')}
                 className="w-full text-left"
               >
-                <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <Upload className="w-6 h-6 text-primary" />
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="p-2 sm:p-3 rounded-lg bg-primary/10 flex-shrink-0">
+                    <Upload className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">{t('dashboard.quickActions.uploadDocument')}</h3>
-                    <p className="text-sm text-muted-foreground">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-sm sm:text-base font-semibold mb-1 truncate">{t('dashboard.quickActions.uploadDocument')}</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground">
                       Upload PDF documents
                     </p>
                   </div>
@@ -172,18 +172,18 @@ export function DashboardPage() {
               </button>
             </Card>
 
-            <Card className="hover:border-primary/50 cursor-pointer transition-colors">
+            <Card className="hover:border-primary/50 cursor-pointer transition-colors sm:col-span-2 lg:col-span-1">
               <button
                 onClick={() => navigate('/verify')}
                 className="w-full text-left"
               >
-                <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <Shield className="w-6 h-6 text-primary" />
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="p-2 sm:p-3 rounded-lg bg-primary/10 flex-shrink-0">
+                    <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">{t('dashboard.quickActions.verifyDocument')}</h3>
-                    <p className="text-sm text-muted-foreground">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-sm sm:text-base font-semibold mb-1 truncate">{t('dashboard.quickActions.verifyDocument')}</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground">
                       Check document authenticity
                     </p>
                   </div>
@@ -195,15 +195,15 @@ export function DashboardPage() {
 
         {/* Recent Activity */}
         <Card>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold">{t('dashboard.recentActivity')}</h2>
+          <div className="flex items-center justify-between mb-4 md:mb-6">
+            <h2 className="text-lg md:text-xl font-bold">{t('dashboard.recentActivity')}</h2>
             <Button
               variant="ghost"
               onClick={() => navigate('/app/envelopes')}
-              className="text-sm"
+              className="text-xs sm:text-sm"
             >
               View all
-              <ArrowUpRight className="w-4 h-4 ml-1" />
+              <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
             </Button>
           </div>
 
@@ -216,37 +216,37 @@ export function DashboardPage() {
               ))}
             </div>
           ) : recentEnvelopes.length === 0 ? (
-            <div className="text-center py-12">
-              <Send className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">No envelopes yet</h3>
-              <p className="text-sm text-muted-foreground mb-4">
+            <div className="text-center py-8 md:py-12">
+              <Send className="w-10 h-10 md:w-12 md:h-12 text-muted-foreground mx-auto mb-3 md:mb-4" />
+              <h3 className="text-sm md:text-base font-semibold mb-2">No envelopes yet</h3>
+              <p className="text-xs md:text-sm text-muted-foreground mb-4">
                 Create your first envelope to get started
               </p>
-              <Button onClick={() => navigate('/app/envelopes/new')}>
+              <Button onClick={() => navigate('/app/envelopes/new')} className="text-sm">
                 Create Envelope
               </Button>
             </div>
           ) : (
-            <div className="space-y-3">
+            <div className="space-y-2 md:space-y-3">
               {recentEnvelopes.map((envelope) => (
                 <div
                   key={envelope.id}
-                  className="flex items-center justify-between p-4 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between p-3 sm:p-4 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer gap-3"
                   onClick={() => navigate(`/app/envelopes/${envelope.id}`)}
                 >
-                  <div className="flex items-center gap-4 flex-1 min-w-0">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <FileText className="w-5 h-5 text-primary" />
+                  <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                    <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
+                      <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold truncate">{envelope.title}</h3>
-                      <p className="text-sm text-muted-foreground">
+                      <h3 className="text-sm sm:text-base font-semibold truncate">{envelope.title}</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         {envelope.signers.length} signer{envelope.signers.length !== 1 ? 's' : ''} •{' '}
                         {new Date(envelope.createdAt).toLocaleDateString()}
                       </p>
                     </div>
                   </div>
-                  <Badge className={getStatusBadge(envelope.status)}>
+                  <Badge className={`${getStatusBadge(envelope.status)} self-start sm:self-center flex-shrink-0`}>
                     {envelope.status}
                   </Badge>
                 </div>

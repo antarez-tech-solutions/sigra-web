@@ -10,7 +10,7 @@ export function PublicFooter() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4" style={{ textDecoration: 'none' }}>
-              <img src="/logo.svg" alt="SigraChain" className="h-8 w-auto" />
+              <img src="/logo-icon.svg" alt="SigraChain" className="h-8 w-auto" />
               <span className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>SigraChain</span>
             </Link>
             <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
@@ -38,30 +38,30 @@ export function PublicFooter() {
           <div>
             <h3 className="text-sm font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>Product</h3>
             <ul className="space-y-3">
-              <li><Link to="/pricing" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>{t('nav.pricing')}</Link></li>
-              <li><Link to="/verify" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>{t('nav.verify')}</Link></li>
-              <li><Link to="/login" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>{t('nav.login')}</Link></li>
-              <li><Link to="/register" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>{t('nav.register')}</Link></li>
+              <li><Link to="/pricing" className="text-sm transition-colors no-underline" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>{t('nav.pricing')}</Link></li>
+              <li><Link to="/verify" className="text-sm transition-colors no-underline" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>{t('nav.verify')}</Link></li>
+              <li><Link to="/login" className="text-sm transition-colors no-underline" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>{t('nav.login')}</Link></li>
+              <li><Link to="/register" className="text-sm transition-colors no-underline" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>{t('nav.register')}</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>Resources</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>Documentation</a></li>
-              <li><a href="#" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>API Reference</a></li>
-              <li><a href="#" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>Blog</a></li>
-              <li><a href="#" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>Support</a></li>
+              <li><a href="#" className="text-sm transition-colors no-underline" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Documentation</a></li>
+              <li><a href="#" className="text-sm transition-colors no-underline" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>API Reference</a></li>
+              <li><a href="#" className="text-sm transition-colors no-underline" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Blog</a></li>
+              <li><a href="#" className="text-sm transition-colors no-underline" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Support</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>Legal</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>Privacy Policy</a></li>
-              <li><a href="#" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>Terms of Service</a></li>
-              <li><a href="#" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>Cookie Policy</a></li>
-              <li><a href="#" className="text-sm transition-colors" style={{ color: 'var(--text-muted)' }}>GDPR</a></li>
+              <li><a href="#" className="text-sm transition-colors no-underline" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Privacy Policy</a></li>
+              <li><a href="#" className="text-sm transition-colors no-underline" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Terms of Service</a></li>
+              <li><a href="#" className="text-sm transition-colors no-underline" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Cookie Policy</a></li>
+              <li><a href="#" className="text-sm transition-colors no-underline" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>GDPR</a></li>
             </ul>
           </div>
         </div>

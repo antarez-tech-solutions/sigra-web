@@ -141,13 +141,10 @@ export function RegisterPage() {
                 </Button>
               </form>
 
-              <div className="relative my-8">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-border" />
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-4 bg-card text-muted-foreground">Or continue with</span>
-                </div>
+              <div className="flex items-center my-8 gap-4">
+                <div className="flex-1 h-px bg-border"></div>
+                <span className="text-sm text-muted-foreground whitespace-nowrap">{t('auth.orContinueWith')}</span>
+                <div className="flex-1 h-px bg-border"></div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
@@ -161,7 +158,7 @@ export function RegisterPage() {
 
               <p className="text-center text-sm text-muted-foreground mt-8">
                 {t('auth.hasAccount')}{' '}
-                <Link to="/login" className="text-primary hover:text-primary-hover font-medium">
+                <Link to="/login" className="text-primary hover:text-primary-hover font-medium no-underline" style={{ textDecoration: 'none' }}>
                   {t('auth.loginButton')}
                 </Link>
               </p>

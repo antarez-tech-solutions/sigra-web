@@ -54,17 +54,23 @@
     "loginSuccess": "Login successful!",
     "registerSuccess": "Account created successfully!",
     "logoutSuccess": "Logged out successfully",
-    "invalidCredentials": "Invalid email or password"
+    "invalidCredentials": "Invalid email or password",
+    "orContinueWith": "Or continue with",
+    "rememberMe": "Remember me",
+    "demoCredentials": "Demo credentials: demo@sigra.io / password"
   },
   "landing": {
     "hero": {
       "title": "Every Signature, Forever Verifiable",
       "subtitle": "Blockchain-anchored e-signatures with independent verification. No vendor lock-in, no expiration.",
       "cta": "Get Started Free",
-      "ctaSecondary": "Verify Document"
+      "ctaSecondary": "Verify Document",
+      "noCreditCard": "No credit card required • 5 free documents per month"
     },
     "features": {
       "title": "Why SigraChain?",
+      "subtitle": "Built on Ethereum L2 (Base & Arbitrum) for transparent, permanent proof",
+      "whyChoose": "Why Choose SigraChain?",
       "upload": {
         "title": "Upload",
         "description": "Upload any PDF document to get started"
@@ -76,9 +82,7 @@
       "anchor": {
         "title": "Anchor",
         "description": "Proof anchored on Ethereum L2 (Base & Arbitrum)"
-      }
-    },
-    "benefits": {
+      },
       "independent": {
         "title": "Independent Verification",
         "description": "Anyone can verify documents without needing SigraChain to exist"
@@ -91,6 +95,31 @@
         "title": "Cost Effective",
         "description": "Batch anchoring reduces costs to pennies per document"
       }
+    },
+    "benefits": {
+      "title": "Built for Trust",
+      "tamperProof": {
+        "title": "Tamper-Proof",
+        "description": "Every signature is cryptographically signed and anchored on-chain, making it impossible to alter."
+      },
+      "legallyValid": {
+        "title": "Legally Valid",
+        "description": "Compliant with eIDAS, ESIGN Act, and other major electronic signature regulations worldwide."
+      },
+      "globalVerification": {
+        "title": "Global Verification",
+        "description": "Anyone can verify document authenticity using the public verification portal—no account needed."
+      },
+      "enterpriseReady": {
+        "title": "Enterprise Ready",
+        "description": "SOC 2 Type II compliant with SLA guarantees, SSO, and dedicated support for enterprise clients."
+      }
+    },
+    "stats": {
+      "documentsSigned": "Documents Signed",
+      "activeUsers": "Active Users",
+      "uptime": "Uptime",
+      "support": "Support"
     }
   },
   "dashboard": {
@@ -159,6 +188,115 @@
     "notFound": {
       "title": "Not Found",
       "description": "This document has not been signed on SigraChain"
+    },
+    "errors": {
+      "enterHash": "Please enter a document hash",
+      "verificationFailed": "Failed to verify document"
+    },
+    "howToFind": {
+      "title": "How to find your document hash:",
+      "description": "The hash is a 66-character string starting with \"0x\" that was provided when the document was signed. You can find it in the signed document details page or in the confirmation email."
+    },
+    "details": {
+      "title": "Document Details",
+      "documentId": "Document ID",
+      "envelopeTitle": "Envelope Title",
+      "signedBy": "Signed By",
+      "anchoredAt": "Anchored At",
+      "signer": "Signer",
+      "signed": "Signed",
+      "blockchainProof": "Blockchain Proof",
+      "network": "Network",
+      "ethereumBase": "Ethereum L2 (Base)",
+      "merkleRoot": "Merkle Root",
+      "transaction": "Transaction",
+      "viewOnExplorer": "View on Block Explorer"
+    },
+    "benefits": {
+      "independentVerification": {
+        "title": "Independent Verification",
+        "description": "Verify documents without needing a SigraChain account"
+      },
+      "instantResults": {
+        "title": "Instant Results",
+        "description": "Get verification results in seconds with full blockchain proof"
+      },
+      "cryptographicProof": {
+        "title": "Cryptographic Proof",
+        "description": "Merkle proof verification ensures document integrity"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "subtitle": "Start free. Upgrade when you need. All plans include blockchain anchoring.",
+    "billingToggle": {
+      "monthly": "Monthly",
+      "annual": "Annual",
+      "save": "Save 20%"
+    },
+    "plans": {
+      "free": {
+        "name": "Free",
+        "description": "Perfect for trying out SigraChain",
+        "cta": "Get Started",
+        "features": [
+          "5 documents per month",
+          "2 signers per document",
+          "Email support",
+          "Public verification",
+          "Basic analytics"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "For professionals and small teams",
+        "cta": "Start Free Trial",
+        "mostPopular": "Most Popular",
+        "features": [
+          "Unlimited documents",
+          "10 signers per document",
+          "Priority support",
+          "Advanced analytics",
+          "Custom branding",
+          "API access",
+          "Audit logs"
+        ]
+      },
+      "business": {
+        "name": "Business",
+        "description": "For growing businesses",
+        "cta": "Contact Sales",
+        "features": [
+          "Everything in Pro",
+          "Unlimited signers",
+          "Bulk operations",
+          "SSO integration",
+          "Dedicated support",
+          "Custom workflows",
+          "SLA guarantee",
+          "Advanced security"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "For large organizations",
+        "cta": "Contact Sales",
+        "features": [
+          "Everything in Business",
+          "Custom integrations",
+          "On-premise deployment",
+          "24/7 phone support",
+          "Dedicated account manager",
+          "Custom SLA",
+          "Advanced compliance",
+          "White-label solution"
+        ]
+      }
+    },
+    "price": {
+      "perMonth": "/month",
+      "contactUs": "Contact us"
     }
   },
   "settings": {

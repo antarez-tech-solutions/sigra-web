@@ -102,7 +102,7 @@ export function SigningPage() {
       <div className="border-b border-border bg-card">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/logo.svg" alt="SigraChain" className="h-8 w-auto" />
+            <img src="/logo-icon.svg" alt="SigraChain" className="h-8 w-auto" />
             <span className="font-bold text-xl">SigraChain</span>
           </div>
           <div className="text-sm text-muted-foreground">

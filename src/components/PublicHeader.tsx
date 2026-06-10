@@ -11,24 +11,24 @@ export function PublicHeader() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2" style={{ textDecoration: 'none' }}>
-            <img src="/logo.svg" alt="SigraChain" className="h-8 w-auto" />
+            <img src="/logo-icon.svg" alt="SigraChain" className="h-8 w-auto" />
             <span className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>SigraChain</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-sm font-medium transition-colors hover:text-primary" style={{ color: 'var(--text-secondary)' }}>
+            <Link to="/" className="text-sm font-medium transition-colors hover:text-primary no-underline" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
               {t('nav.home')}
             </Link>
-            <Link to="/pricing" className="text-sm font-medium transition-colors hover:text-primary" style={{ color: 'var(--text-secondary)' }}>
+            <Link to="/pricing" className="text-sm font-medium transition-colors hover:text-primary no-underline" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
               {t('nav.pricing')}
             </Link>
-            <Link to="/verify" className="text-sm font-medium transition-colors hover:text-primary" style={{ color: 'var(--text-secondary)' }}>
+            <Link to="/verify" className="text-sm font-medium transition-colors hover:text-primary no-underline" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
               {t('nav.verify')}
             </Link>
-            <Link to="/login" className="btn-ghost">
+            <Link to="/login" className="btn-ghost no-underline" style={{ textDecoration: 'none' }}>
               {t('nav.login')}
             </Link>
-            <Link to="/register" className="btn-primary">
+            <Link to="/register" className="btn-primary no-underline" style={{ textDecoration: 'none' }}>
               {t('nav.register')}
             </Link>
           </nav>

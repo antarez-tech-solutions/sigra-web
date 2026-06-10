@@ -69,9 +69,9 @@ export function LoginPage() {
                 <div className="flex items-center justify-between text-sm">
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input type="checkbox" className="rounded border-border" />
-                    <span className="text-muted-foreground">Remember me</span>
+                    <span className="text-muted-foreground">{t('auth.rememberMe')}</span>
                   </label>
-                  <Link to="/forgot-password" className="text-primary hover:text-primary-hover font-medium">
+                  <Link to="/forgot-password" className="text-primary hover:text-primary-hover font-medium no-underline" style={{ textDecoration: 'none' }}>
                     {t('auth.forgotPassword')}
                   </Link>
                 </div>
@@ -81,13 +81,10 @@ export function LoginPage() {
                 </Button>
               </form>
 
-              <div className="relative my-8">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-border" />
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-4 bg-card text-muted-foreground">Or continue with</span>
-                </div>
+              <div className="flex items-center my-8 gap-4">
+                <div className="flex-1 h-px bg-border"></div>
+                <span className="text-sm text-muted-foreground whitespace-nowrap">{t('auth.orContinueWith')}</span>
+                <div className="flex-1 h-px bg-border"></div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
@@ -101,14 +98,14 @@ export function LoginPage() {
 
               <p className="text-center text-sm text-muted-foreground mt-8">
                 {t('auth.noAccount')}{' '}
-                <Link to="/register" className="text-primary hover:text-primary-hover font-medium">
+                <Link to="/register" className="text-primary hover:text-primary-hover font-medium no-underline" style={{ textDecoration: 'none' }}>
                   {t('auth.registerButton')}
                 </Link>
               </p>
             </Card>
 
             <div className="mt-6 text-center text-xs text-muted-foreground">
-              <p>Demo credentials: demo@sigra.io / password</p>
+              <p>{t('auth.demoCredentials')}</p>
             </div>
           </div>
         </Container>

@@ -4,7 +4,7 @@ import { mockUser, mockDocuments, mockEnvelopes } from './mockData'
 
 class ApiClient {
   private client: AxiosInstance
-  private useMock: boolean = true
+  public useMock: boolean = true
 
   constructor() {
     this.client = axios.create({

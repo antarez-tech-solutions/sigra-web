@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
+  <!-- SigraChain Logo Icon: Abstract "S" with chain link motif -->
+  <g transform="translate(4, 4)">
+    <!-- Top chain link -->
+    <rect x="14" y="2" width="24" height="12" rx="6" stroke="#1E3A5F" stroke-width="3.5" fill="none"/>
+    <!-- Bottom chain link -->
+    <rect x="14" y="38" width="24" height="12" rx="6" stroke="#1E3A5F" stroke-width="3.5" fill="none"/>
+    <!-- Connecting S-curve -->
+    <path d="M38 8 C48 8 48 26 26 26 C4 26 4 44 14 44" stroke="#7B3FE4" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- Inner S flow -->
+    <path d="M38 16 C44 16 44 26 26 30 C8 34 8 44 14 48" stroke="#7B3FE4" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <!-- Verification dot -->
+    <circle cx="40" cy="50" r="4" fill="#16A34A"/>
+    <path d="M38 50 L39.5 51.5 L42.5 48.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>

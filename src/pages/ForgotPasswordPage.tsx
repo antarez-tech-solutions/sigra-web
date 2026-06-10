@@ -57,7 +57,8 @@ export function ForgotPasswordPage() {
                   </div>
                   <Link
                     to="/login"
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-medium"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-medium no-underline"
+                    style={{ textDecoration: 'none' }}
                   >
                     <ArrowLeft className="w-4 h-4" />
                     Back to login
@@ -105,7 +106,8 @@ export function ForgotPasswordPage() {
               <div className="mt-6 text-center">
                 <Link
                   to="/login"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-medium"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-medium no-underline"
+                  style={{ textDecoration: 'none' }}
                 >
                   <ArrowLeft className="w-4 h-4" />
                   Back to login
