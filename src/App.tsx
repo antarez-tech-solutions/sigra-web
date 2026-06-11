@@ -1,14 +1,67 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { ThemeToggle } from './components/ThemeToggle'
+import { LanguageSwitcher } from './components/LanguageSwitcher'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import { useAuth } from './contexts/AuthContext'
 import { Button } from './components/Button'
 import { Input } from './components/Input'
 import { Card } from './components/Card'
+import { Badge } from './components/Badge'
 import { useToast } from './components/ToastProvider'
 import { useState } from 'react'
 
+function LandingDemo() {
+  const { t } = useTranslation()
+
+  return (
+    <div className="min-h-screen">
+      <header className="sticky top-0 z-50 backdrop-blur-md border-b" style={{ backgroundColor: 'var(--bg-primary)', borderColor: 'var(--border-primary)' }}>
+        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 className="heading-2">{t('common.appName')}</h1>
+          <div className="flex gap-3">
+            <LanguageSwitcher />
+            <ThemeToggle />
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-4xl mx-auto px-4 py-20 text-center">
+        <h1 className="heading-1 mb-6">
+          {t('landing.hero.title')}
+        </h1>
+        <p className="text-xl text-muted mb-8 max-w-2xl mx-auto">
+          {t('landing.hero.subtitle')}
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg">{t('landing.hero.cta')}</Button>
+          <Button variant="secondary" size="lg">{t('landing.hero.ctaSecondary')}</Button>
+        </div>
+
+        <div className="mt-20">
+          <h2 className="heading-2 mb-8">{t('landing.features.title')}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card>
+              <h3 className="heading-3 mb-3">{t('landing.features.upload.title')}</h3>
+              <p className="text-muted">{t('landing.features.upload.description')}</p>
+            </Card>
+            <Card>
+              <h3 className="heading-3 mb-3">{t('landing.features.sign.title')}</h3>
+              <p className="text-muted">{t('landing.features.sign.description')}</p>
+            </Card>
+            <Card>
+              <h3 className="heading-3 mb-3">{t('landing.features.anchor.title')}</h3>
+              <p className="text-muted">{t('landing.features.anchor.description')}</p>
+            </Card>
+          </div>
+        </div>
+      </main>
+    </div>
+  )
+}
+
 function LoginDemo() {
+  const { t } = useTranslation()
   const { login } = useAuth()
   const { showToast } = useToast()
   const [loading, setLoading] = useState(false)
@@ -20,9 +73,9 @@ function LoginDemo() {
     setLoading(true)
     try {
       await login({ email, password })
-      showToast('success', 'Login successful!')
+      showToast('success', t('auth.loginSuccess'))
     } catch (error) {
-      showToast('error', error instanceof Error ? error.message : 'Login failed')
+      showToast('error', t('auth.invalidCredentials'))
     } finally {
       setLoading(false)
     }
@@ -32,30 +85,31 @@ function LoginDemo() {
     <div className="min-h-screen flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="heading-2">Log In</h1>
-          <ThemeToggle />
+          <h1 className="heading-2">{t('auth.loginTitle')}</h1>
+          <div className="flex gap-2">
+            <LanguageSwitcher />
+            <ThemeToggle />
+          </div>
         </div>
+        <p className="text-muted mb-6">{t('auth.loginSubtitle')}</p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input
-            label="Email"
+            label={t('auth.email')}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
           <Input
-            label="Password"
+            label={t('auth.password')}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
           <Button type="submit" loading={loading} className="w-full">
-            Log In
+            {t('auth.loginButton')}
           </Button>
-          <p className="text-sm text-muted text-center">
-            Demo credentials: demo@sigra.io / password
-          </p>
         </form>
       </Card>
     </div>
@@ -63,101 +117,103 @@ function LoginDemo() {
 }
 
 function DashboardDemo() {
+  const { t } = useTranslation()
   const { user, logout } = useAuth()
-  const { showToast } = useToast()
-
-  const handleLogout = async () => {
-    await logout()
-    showToast('success', 'Logged out successfully')
-  }
 
   return (
     <div className="min-h-screen p-8 max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="heading-1 mb-2">Dashboard</h1>
-          <p className="text-muted">Welcome, {user?.firstName}!</p>
+          <h1 className="heading-1 mb-2">{t('dashboard.title')}</h1>
+          <p className="text-muted">{t('dashboard.welcome', { name: user?.firstName })}</p>
         </div>
         <div className="flex gap-3">
+          <LanguageSwitcher />
           <ThemeToggle />
-          <Button variant="ghost" onClick={handleLogout}>
-            Log Out
+          <Button variant="ghost" onClick={logout}>
+            {t('nav.logout')}
           </Button>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         <Card>
-          <p className="text-sm text-muted mb-2">Total Documents</p>
+          <p className="text-sm text-muted mb-2">{t('dashboard.stats.totalDocuments')}</p>
           <p className="text-3xl font-bold">12</p>
         </Card>
         <Card>
-          <p className="text-sm text-muted mb-2">Pending Signatures</p>
+          <p className="text-sm text-muted mb-2">{t('dashboard.stats.pendingSignatures')}</p>
           <p className="text-3xl font-bold text-warning">3</p>
         </Card>
         <Card>
-          <p className="text-sm text-muted mb-2">Completed</p>
+          <p className="text-sm text-muted mb-2">{t('dashboard.stats.completed')}</p>
           <p className="text-3xl font-bold text-accent">8</p>
         </Card>
         <Card>
-          <p className="text-sm text-muted mb-2">Anchored On-Chain</p>
+          <p className="text-sm text-muted mb-2">{t('dashboard.stats.anchoredOnChain')}</p>
           <p className="text-3xl font-bold text-primary">8</p>
         </Card>
       </div>
 
       <Card>
-        <h2 className="heading-2 mb-4">User Profile</h2>
-        <div className="space-y-2">
-          <p><strong>Email:</strong> {user?.email}</p>
-          <p><strong>Name:</strong> {user?.firstName} {user?.lastName}</p>
-          <p><strong>Company:</strong> {user?.company}</p>
-          <p><strong>Plan:</strong> {user?.plan}</p>
+        <h2 className="heading-2 mb-4">{t('dashboard.recentActivity')}</h2>
+        <div className="space-y-3">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="flex items-center justify-between p-4 rounded-lg" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+              <div>
+                <p className="font-semibold">NDA Agreement #{i}</p>
+                <p className="text-sm text-muted">2 days ago</p>
+              </div>
+              <Badge variant="success">{t('envelopes.status.completed')}</Badge>
+            </div>
+          ))}
         </div>
       </Card>
     </div>
   )
 }
 
-function ApiDemo() {
+function I18nDemo() {
+  const { t } = useTranslation()
+
   return (
     <div className="min-h-screen p-8 max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="heading-1 mb-2">API & Auth Demo</h1>
-          <p className="text-muted">Step 4: Mock backend integration</p>
+          <h1 className="heading-1 mb-2">i18n Demo</h1>
+          <p className="text-muted">Step 5: Multi-language support</p>
         </div>
-        <ThemeToggle />
+        <div className="flex gap-3">
+          <LanguageSwitcher />
+          <ThemeToggle />
+        </div>
       </div>
 
       <div className="space-y-6">
         <Card>
-          <h2 className="heading-2 mb-4">Mock API Client</h2>
+          <h2 className="heading-2 mb-4">Current Language: {t('common.appName')}</h2>
           <p className="text-muted mb-4">
-            The API client simulates backend responses with realistic delays. All data is stored in memory and localStorage.
+            The app supports English and Portuguese (Brazil) with automatic language detection and localStorage persistence.
           </p>
-          <div className="space-y-2 text-sm">
-            <p>✓ Authentication (login, register, logout)</p>
-            <p>✓ JWT token management</p>
-            <p>✓ Protected routes</p>
-            <p>✓ Documents API</p>
-            <p>✓ Envelopes API</p>
-            <p>✓ Document verification</p>
+          <div className="flex gap-3">
+            <Button onClick={() => window.location.href = '/'}>
+              {t('nav.home')}
+            </Button>
+            <Button variant="secondary" onClick={() => window.location.href = '/login'}>
+              {t('nav.login')}
+            </Button>
           </div>
         </Card>
 
         <Card>
-          <h2 className="heading-2 mb-4">Try It</h2>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a href="/login" className="btn-primary text-center">
-              Go to Login →
-            </a>
-            <a href="/app/dashboard" className="btn-secondary text-center">
-              Go to Dashboard (Protected) →
-            </a>
+          <h2 className="heading-3 mb-4">Translation Examples</h2>
+          <div className="space-y-2 text-sm">
+            <p><strong>Loading:</strong> {t('common.loading')}</p>
+            <p><strong>Save:</strong> {t('common.save')}</p>
+            <p><strong>Cancel:</strong> {t('common.cancel')}</p>
+            <p><strong>Dashboard:</strong> {t('nav.dashboard')}</p>
+            <p><strong>Documents:</strong> {t('nav.documents')}</p>
           </div>
-          <p className="text-sm text-muted mt-4">
-            The dashboard is protected and will redirect to login if not authenticated.
-          </p>
         </Card>
       </div>
     </div>
@@ -167,7 +223,8 @@ function ApiDemo() {
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<ApiDemo />} />
+      <Route path="/" element={<I18nDemo />} />
+      <Route path="/landing" element={<LandingDemo />} />
       <Route path="/login" element={<LoginDemo />} />
       <Route
         path="/app/dashboard"
