@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { LandingPage } from './pages/LandingPage'
 import { PricingPage } from './pages/PricingPage'
+import { VerifyPage } from './pages/VerifyPage'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import { useAuth } from './contexts/AuthContext'
 import { Button } from './components/Button'
@@ -84,6 +85,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/pricing" element={<PricingPage />} />
+      <Route path="/verify" element={<VerifyPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route
         path="/app/dashboard"
