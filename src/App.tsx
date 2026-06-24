@@ -11,6 +11,7 @@ import { EnvelopesPage } from './pages/EnvelopesPage'
 import { EnvelopeDetailPage } from './pages/EnvelopeDetailPage'
 import { CreateEnvelopePage } from './pages/CreateEnvelopePage'
 import { SigningPage } from './pages/SigningPage'
+import { SettingsPage } from './pages/SettingsPage'
 import { ProtectedRoute } from './components/ProtectedRoute'
 
 export default function App() {
@@ -60,6 +61,14 @@ export default function App() {
         element={
           <ProtectedRoute>
             <EnvelopeDetailPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/app/settings"
+        element={
+          <ProtectedRoute>
+            <SettingsPage />
           </ProtectedRoute>
         }
       />
