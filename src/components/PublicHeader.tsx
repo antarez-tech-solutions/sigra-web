@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { ThemeToggle } from './ThemeToggle'
 import { LanguageSwitcher } from './LanguageSwitcher'
-import { useTranslation } from 'react-i18next'
 
 export function PublicHeader() {
   const { t } = useTranslation()
@@ -16,13 +16,13 @@ export function PublicHeader() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-sm font-medium transition-colors" style={{ color: 'var(--text-secondary)' }}>
+            <Link to="/" className="text-sm font-medium transition-colors hover:text-primary" style={{ color: 'var(--text-secondary)' }}>
               {t('nav.home')}
             </Link>
-            <Link to="/pricing" className="text-sm font-medium transition-colors" style={{ color: 'var(--text-secondary)' }}>
+            <Link to="/pricing" className="text-sm font-medium transition-colors hover:text-primary" style={{ color: 'var(--text-secondary)' }}>
               {t('nav.pricing')}
             </Link>
-            <Link to="/verify" className="text-sm font-medium transition-colors" style={{ color: 'var(--text-secondary)' }}>
+            <Link to="/verify" className="text-sm font-medium transition-colors hover:text-primary" style={{ color: 'var(--text-secondary)' }}>
               {t('nav.verify')}
             </Link>
             <Link to="/login" className="btn-ghost">
