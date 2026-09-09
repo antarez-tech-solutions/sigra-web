@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { PublicHeader } from '../components/PublicHeader'
 import { Button } from '../components/Button'
@@ -10,7 +9,6 @@ import { useState } from 'react'
 import { Mail, ArrowLeft, CheckCircle2 } from 'lucide-react'
 
 export function ForgotPasswordPage() {
-  const { t } = useTranslation()
   const { showToast } = useToast()
   const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState('')

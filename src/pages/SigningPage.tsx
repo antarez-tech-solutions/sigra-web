@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
 import { Card } from '../components/Card'
 import { Button } from '../components/Button'
 import { Input } from '../components/Input'
@@ -13,7 +12,6 @@ import {
 } from 'lucide-react'
 
 export function SigningPage() {
-  const { token } = useParams<{ token: string }>()
   const { showToast } = useToast()
   const [signingMethod, setSigningMethod] = useState<'draw' | 'type'>('draw')
   const [typedSignature, setTypedSignature] = useState('')

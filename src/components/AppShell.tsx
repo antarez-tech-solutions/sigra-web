@@ -1,5 +1,3 @@
-import { useTranslation } from 'react-i18next'
-import { useNavigate, useLocation } from 'react-router-dom'
 import { Sidebar } from './Sidebar'
 import { ThemeToggle } from './ThemeToggle'
 import { LanguageSwitcher } from './LanguageSwitcher'
@@ -13,7 +11,6 @@ interface AppShellProps {
 }
 
 export function AppShell({ children, title }: AppShellProps) {
-  const { t } = useTranslation()
   const { user } = useAuth()
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
