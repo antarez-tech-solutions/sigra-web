@@ -55,10 +55,30 @@ npm run dev
 
 ### Environment Variables
 
-Create a `.env` file:
+Copy `.env.example` to `.env` and fill in:
 
 ```env
 VITE_API_URL=http://localhost:8080/api
+```
+
+`VITE_API_URL` is a build-time public value, not a secret — anything secret
+must never enter a Vite bundle at all.
+
+## Local validation
+
+Run before every commit:
+
+```bash
+npm ci                # lockfile-first install
+npm run build         # tsc -b && vite build
+npm audit --omit=dev  # advisory check against package-lock.json
+```
+
+This repo is public, so it also ships a pre-commit hook that blocks secrets
+and internal endpoints from entering the history. Activate it after cloning:
+
+```bash
+git config core.hooksPath .githooks
 ```
 
 ### Available Scripts
