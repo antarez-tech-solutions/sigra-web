@@ -1,5 +1,6 @@
 import axios, { AxiosInstance, AxiosError } from 'axios'
 import { User, Document, Envelope, LoginRequest, RegisterRequest, AuthResponse } from './types'
+import { ApiHashResult, ApiError } from './wire'
 import { mockUser, mockDocuments, mockEnvelopes } from './mockData'
 
 class ApiClient {
@@ -124,15 +125,8 @@ class ApiClient {
     return response.data
   }
 
-  async verifyDocument(hash: string): Promise<{ verified: boolean; envelope?: Envelope }> {
-    if (this.useMock) {
-      await this.delay(800)
-      const env = mockEnvelopes.find(e => 
-        mockDocuments.find(d => d.id === e.documentId)?.hash === hash
-      )
-      return { verified: !!env, envelope: env }
-    }
-    const response = await this.client.post('/verify', { hash })
+  async verifyHash(hash: string): Promise<ApiHashResult> {
+    const response = await this.client.get<ApiHashResult>(`/api/verify/hash/${hash}`)
     return response.data
   }
 
@@ -146,3 +140,8 @@ class ApiClient {
 }
 
 export const apiClient = new ApiClient()
+
+export function apiErrorMessage(e: unknown): string {
+  const err = e as AxiosError<ApiError>
+  return err.response?.data?.message ?? 'request failed'
+}

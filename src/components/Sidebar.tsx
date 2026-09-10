@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Home, FileText, Send, Settings, CreditCard, LogOut, X } from 'lucide-react'

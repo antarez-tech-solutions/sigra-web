@@ -13,7 +13,6 @@ import {
   Send, 
   Plus, 
   Search, 
-  Filter, 
   Users, 
   Calendar,
   ArrowUpRight,
